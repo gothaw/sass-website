@@ -1,0 +1,43 @@
+//============================================= Imports ==================================================
+@import 'partials/_reset';
+@import 'partials/_utilities';
+/*========================================================================================================*/
+/*========================================== General Styling =============================================*/
+/*========================================================================================================*/
+.inner{
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.img{
+  &-responsive{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+html{
+  box-sizing: border-box;
+}
+*,*:before,*:after{
+  box-sizing: inherit;
+}
+body{
+  background-color: $bg-color;
+  font-family: 'Roboto', sans-serif;
+}
+a{
+  text-decoration: none;
+}
+@keyframes fade {
+  from {opacity: 0.5}
+  to {opacity: 1}
+}
+//============================================= Import Styling ==================================================
+@import 'partials/_header';
+@import 'partials/_footer';
+@import 'partials/_home';
+@import 'partials/_projects';
+
+.test{
+  margin-top: 150px;
+}
