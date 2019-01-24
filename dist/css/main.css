@@ -46,7 +46,7 @@ html, body {
 /*========================================================================================================*/
 .inner {
   max-width: 1140px;
-  margin: 0 auto; }
+  margin: 0 auto 0 250px; }
 
 .img-responsive {
   width: 100%;
@@ -60,7 +60,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  background-color: #515757;
+  background-color: #040308;
   font-family: 'Roboto', sans-serif; }
 
 a {
@@ -78,6 +78,43 @@ a {
   to {
     opacity: 1; } }
 
+/*========================================================================================================*/
+/*============================================== Header ==================================================*/
+/*========================================================================================================*/
+.menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  text-align: center;
+  z-index: 30;
+  background-image: url("../../../dist/img/_raw/abstract-burn-burnt-604671.jpg");
+  background-size: cover;
+  background-position: right; }
+  .menu div {
+    padding-top: 50px; }
+
+body {
+  background-image: url("../../../dist/img/_raw/abstract-burn-burnt-604671.jpg");
+  background-size: 50%;
+  background-position: right;
+  background-repeat: no-repeat; }
+
+.header {
+  width: 100%;
+  padding-left: 250px; }
+
+.header__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 700px; }
+
 .test {
-  margin-top: 150px; }
+  margin-top: 300px;
+  text-align: center;
+  color: white; }
 

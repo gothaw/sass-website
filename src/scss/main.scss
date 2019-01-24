@@ -6,7 +6,7 @@
 /*========================================================================================================*/
 .inner{
   max-width: 1140px;
-  margin: 0 auto;
+  margin: 0 auto 0 $nav-bar-width;
 }
 .img{
   &-responsive{
@@ -39,5 +39,7 @@ a{
 @import 'partials/_projects';
 
 .test{
-  margin-top: 150px;
+  margin-top: 300px;
+  text-align: center;
+  color: white;
 }
