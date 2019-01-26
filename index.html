@@ -7,26 +7,50 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>John Doe - Portfolio</title>
+    <link rel="apple-touch-icon" sizes="76x76" href="dist/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="dist/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="dist/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="dist/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="dist/css/main.css" media="screen">
-
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet"></head>
 <body>
     <div class="wrapper">
-        <nav class="menu">
-            <div class="menu__wrapper">
-                <div class="menu__logo">LOGO</div> <!--/menu__logo-->
-                <div class="menu__link">Home</div>
-                <div class="menu__link">About</div>
-                <div class="menu__link">Services</div>
-                <div class="menu__link">Portfolio</div>
-                <div class="menu__link">Contact</div>
-            </div> <!--/menu__wrapper-->
-        </nav> <!--/menu-->
         <header class="header">
-            <div class="header__wrapper">
+            <nav class="header__menu">
+                <div class="menu__wrapper">
+                    <div class="menu__item menu__home">
+                        <a href="#"><img class="menu__logo img-responsive" src="dist/img/jd_logo.png" width="355" height="225" alt="jd logo"></a>
+                    </div> <!--/menu__item menu__home-->
+                    <div class="menu__item menu__home">
+                        <a class="menu__link" href="#">Home</a>
+                    </div> <!--menu__item menu__home-->
+                    <div class="menu__item">
+                        <a class="menu__link" href="#">About</a>
+                    </div> <!--menu__item-->
+                    <div class="menu__item">
+                        <a class="menu__link" href="#">Services</a>
+                    </div> <!--menu__item-->
+                    <div class="menu__item">
+                        <a class="menu__link" href="#">Portfolio</a>
+                    </div> <!--menu__item-->
+                    <div class="menu__item">
+                        <a class="menu__link" href="#">Contact</a>
+                    </div> <!--menu__item-->
+                </div> <!--/menu__wrapper-->
+            </nav> <!--/header__menu-->
+            <div class="header__img-wrapper">
                 <img class="header__img img-responsive" src="dist/img/_raw/blogging-business-coding-34578.jpg" width="6000" height="" alt="">
+                <div class="header__title">
+                    <p>Hi, I am John Doe</p>
+                    <p>I am a Software Developer</p>
+                </div><!--/header__title-->
             </div> <!--/header__wrapper-->
+
+            <div class="header__title"></div><!--/header__title-->
         </header> <!--header-->
 
         <div class="inner">

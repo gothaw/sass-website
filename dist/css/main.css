@@ -60,7 +60,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  background-color: #040308;
+  background-color: black;
   font-family: 'Roboto', sans-serif; }
 
 a {
@@ -81,37 +81,64 @@ a {
 /*========================================================================================================*/
 /*============================================== Header ==================================================*/
 /*========================================================================================================*/
-.menu {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 250px;
-  height: 100vh;
+.header__menu {
   background-color: black;
-  color: white;
   text-align: center;
   z-index: 30;
-  background-image: url("../../../dist/img/_raw/abstract-burn-burnt-604671.jpg");
-  background-size: cover;
-  background-position: right; }
-  .menu div {
-    padding-top: 50px; }
+  font-size: 20px; }
 
-body {
-  background-image: url("../../../dist/img/_raw/abstract-burn-burnt-604671.jpg");
-  background-size: 50%;
-  background-position: right;
-  background-repeat: no-repeat; }
+.menu__link {
+  color: white; }
 
 .header {
   width: 100%;
   padding-left: 250px; }
 
+.header__img-wrapper {
+  position: relative; }
+
 .header__img {
   -o-object-fit: cover;
      object-fit: cover;
-  height: 700px; }
+  height: 800px; }
+
+.header__title {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  text-align: center;
+  margin: 0 auto;
+  font-size: 60px; }
+
+.header__menu, .header__title {
+  font-family: 'Crete Round', serif; }
+
+/* ------------------- <767px   SECTION ------------------- */
+/* ------------------- >768px SECTION --------------------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .menu__wrapper {
+    display: flex;
+    justify-content: space-between; } }
+
+/* ------------------- >1025px SECTION -------------------- */
+@media only screen and (min-width: 1025px) {
+  .header__menu {
+    background-image: url("../../../dist/img/_raw/test-6.jpg");
+    background-size: cover;
+    background-position: bottom right;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    overflow-x: auto; }
+  .menu__link {
+    display: block;
+    padding: 25px 0;
+    border-top: solid 1px #4f4f4f; } }
 
 .test {
   margin-top: 300px;
