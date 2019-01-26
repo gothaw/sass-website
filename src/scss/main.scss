@@ -24,6 +24,7 @@ html{
 body{
   background-color: $bg-color;
   font-family: 'Roboto', sans-serif;
+  color: $font-color;
 }
 a{
   text-decoration: none;
@@ -41,5 +42,4 @@ a{
 .test{
   margin-top: 300px;
   text-align: center;
-  color: white;
 }

@@ -3,18 +3,11 @@
 /*========================================================================================================*/
 /*============================================== Header ==================================================*/
 /*========================================================================================================*/
-.header__menu{
+.menu{
   background-color: black;
   text-align: center;
   z-index: 30;
   font-size: 20px;
-}
-.menu__link{
-  color: white;
-}
-.header{
-  width: 100%;
-  padding-left: $nav-bar-width;
 }
 .header__img-wrapper{
   position: relative;
@@ -23,7 +16,9 @@
   object-fit: cover;
   height: 800px;
 }
-
+.menu__link{
+  color: $font-color;
+}
 .header__title{
   position: absolute;
   top: 50%;
@@ -35,24 +30,23 @@
   font-size: 60px;
 
 }
-.header__menu, .header__title{
+.menu__item, .header__title{
   font-family: 'Crete Round', serif;
 }
-
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
 
 }
 /* ------------------- >768px SECTION --------------------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px){
-  .menu__wrapper{
+  .menu{
     display: flex;
     justify-content: space-between;
   }
 }
 /* ------------------- >1025px SECTION -------------------- */
 @media only screen and (min-width: 1025px) {
-  .header__menu{
+  .menu{
     background-image: url("../../../dist/img/_raw/test-6.jpg");
     background-size: cover;
     background-position: bottom right;
@@ -63,13 +57,33 @@
     width: $nav-bar-width;
     overflow-x: auto;
   }
-  .menu__wrapper{
-    //padding: 0 50px;
+  .menu__logo{
+    display: block;
+    padding: 20px 60px;
   }
   .menu__link{
     display: block;
-    //margin-top: 40px;
-    padding: 25px 0;
-    border-top: solid 1px #4f4f4f;
+    padding: 20px 0;
+  }
+  .menu__item{
+    border-top: solid 1px $menu-hover-color;
+    &:nth-child(6){
+      @debug "_header.scss assumes six divs with menu__item class";
+      border-bottom: solid 1px $menu-hover-color;
+    }
+  }
+  .menu__icons{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 20px;
+  }
+  .icons__text{
+    padding: 20px 0;
+  }
+  .header{
+    width: 100%;
+    padding-left: $nav-bar-width;
   }
 }
