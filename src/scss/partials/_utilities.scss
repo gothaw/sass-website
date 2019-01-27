@@ -1,6 +1,13 @@
 //======================================================================================================
+//============================================= Fonts ==================================================
+//======================================================================================================
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Crete+Round");
+//======================================================================================================
 //=========================================== Variables ================================================
 //======================================================================================================
+$nav-bar-width: 250px;
+$nav-bar-height: 100px;
 $viewports: (
   mobile: 767px,
   tablet-lower: 768px,
@@ -10,8 +17,8 @@ $viewports: (
 $colors: (
   background: black,
   font: white,
-  main: #e5001d,
-  menu-item-border: rgba(55, 55, 55, 0.5),
+  main: #E31D3B,
+  menu-item-accent: rgba(55, 55, 55, 0.5),
   menu-item-active: lighten(rgba(55, 55, 55, 0.5),15%)
 );
 $time: (
@@ -21,13 +28,18 @@ $time: (
   slow: 0.7s,
   v-slow: 1s
 );
-$nav-bar-width: 250px;
-$margin-mobile: 20px;
-$margin-tablet: 35px;
-$margin-desktop: 25px;
-$font-size-lg: 1.5em;
-$font-size-md: 1.2em;
-$font-size-sm: 1.0em;
+$side-padding: (
+  mobile: 20px,
+  tablet: 30px,
+  desktop: 25px
+);
+$div-font-size: (
+  large: 1.5 em,
+  medium: 1.25em,
+  small: 1.0em,
+  v-small: 0.875em
+);
+
 $h-font-size-lg: 3.2em;
 $h-font-size-md: 2.5em;
 $h-font-size-sm: 2.0em;
@@ -42,16 +54,16 @@ $h-font-size-sm: 2.0em;
 @mixin inner{
   @media only screen and (max-width: 767px) {
     margin: 0 auto;
-    padding: 0 $margin-mobile;
+    padding: 0 map-get($side-padding,mobile);
   }
   @media only screen and (min-width: 768px) and (max-width: 1024px){
     margin: 0 auto;
-    padding: 0 $margin-tablet;
+    padding: 0 map-get($side-padding,tablet);
   }
   @media only screen and (min-width: 1025px) {
     max-width: 1140px;
     margin: 0 auto 0 $nav-bar-width;
-    padding-left: $margin-desktop;
+    padding-left: map-get($side-padding,desktop);
   }
 }
-//mixin for responsive font for div
+//=============================================== General ===============================================

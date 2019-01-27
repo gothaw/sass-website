@@ -4,55 +4,28 @@
 /*============================================== Header ==================================================*/
 /*========================================================================================================*/
 .menu{
-  background-color: map_get($colors,background);
+  background-color: map-get($colors,background);
   text-align: center;
-  z-index: 10;
-  font-size: 20px;
-  &__logo{
-    margin-left: 0;
-  }
-  &__logo-wrapper{
-    margin-left: 0;
-  }
-  &__item{
-    position: relative;
-    overflow: hidden;
-  }
-  &__link{
-    color: map_get($colors,font);
-    display: block;
-    font-family: 'Crete Round', serif;
-    position: relative;
-    transition: all map_get($time,fast);
-    z-index: 10;
-    &::before{
-      content:'';
-      z-index: -1;
-      position: absolute;
-      left: 0;
-      top: 0;
-      transition: all map_get($time,fast);
-      background: map_get($colors,menu-item-border);
-    }
-    &:hover{
-      color: map_get($colors,main);
-    }
-    &:hover::before{
-      width: 100%;
-      height: 100%;
-    }
-    &:active::before{
-      background: map_get($colors,menu-item-active);
-    }
-    &:active{
-      text-shadow: 1px -1px map_get($colors,background);
-    }
+  &__toggle{
+    display: none;
   }
   &__icons{
     display: none;
   }
+  &__link{
+    color: map-get($colors,font);
+    display: block;
+    font-family: 'Crete Round', serif;
+    transition: all map-get($time,fast);
+    &:hover{
+      color: map-get($colors,main);
+    }
+    &:active{
+      text-shadow: 1px -1px map-get($colors,background);
+    }
+  }
 }
-.header__img-wrapper{
+.header-wrapper{
   position: relative;
 }
 .header__img{
@@ -68,20 +41,80 @@
   text-align: center;
   margin: 0 auto;
   font-size: 60px;
-  color: map_get($colors,main);
+  color: map-get($colors,main);
   font-family: 'Crete Round', serif;
 }
 
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .menu{
-
+    &__toggle{
+      display: block;
+      cursor: pointer;
+      user-select: none;
+    }
+    &__logo-wrapper{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 map-get($side-padding,mobile);
+      min-height: 100px;
+    }
+    &__link{
+      font-size: map_get($div-font-size,small);
+      padding: 10px 0;
+      border-top: solid 1px map-get($colors,menu-item-accent);
+      &:hover{
+        background: map-get($colors,menu-item-accent);
+      }
+      &:active{
+        background: map-get($colors,menu-item-active);
+      }
+    }
   }
 }
+/* ---------------------- >768px SECTION ------------------ */
+@media only screen and (min-width: 768px){
+  .menu{
+    z-index: 10;
+    &__item{
+      position: relative;
+      overflow: hidden;
+    }
+    &__link{
+      font-size: map_get($div-font-size,medium);
+      position: relative;
+      z-index: 10;
+      &::before{
+        content:'';
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: map-get($colors,menu-item-accent);
+        transition: all map-get($time,fast);
+      }
+      &:hover{
+        color: map-get($colors,main);
+      }
+      &:hover::before{
+        width: 100%;
+        height: 100%;
+      }
+      &:active::before{
+        background: map-get($colors,menu-item-active);
+      }
+      &:active{
+        text-shadow: 1px -1px map-get($colors,background);
+      }
+    }
+  }
+}
+
 /* ------------------- >768px & <1024px SECTION ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px){
   .menu{
-    padding: 0 $margin-tablet;
+    padding: 0 map-get($side-padding,tablet);
     background-image: url("../../../dist/img/nav-bar/navbar-background-mobile.jpg");
     background-size: cover;
     background-position: bottom right;
@@ -95,17 +128,17 @@
     }
     &__item{
       width: 100%;
-      border-right: solid 1px map_get($colors,menu-item-border);
+      border-right: solid 1px map-get($colors,menu-item-accent);
       &:nth-child(2){
         @debug "_header.scss assumes six divs with menu__item class";
-        border-left: solid 1px map_get($colors,menu-item-border);
+        border-left: solid 1px map-get($colors,menu-item-accent);
       }
     }
     &__link{
       padding: 40px 0;
       &::before{
         height: 0;
-        border-bottom: solid 5px map_get($colors,main);
+        border-bottom: solid 5px map-get($colors,main);
       }
     }
   }
@@ -126,17 +159,17 @@
       padding: 20px 60px;
     }
     &__item{
-      border-top: solid 1px map_get($colors,menu-item-border);
+      border-top: solid 1px map-get($colors,menu-item-accent);
       &:nth-child(6){
         @debug "_header.scss assumes six divs with menu__item class";
-        border-bottom: solid 1px map_get($colors,menu-item-border);
+        border-bottom: solid 1px map-get($colors,menu-item-accent);
       }
     }
     &__link{
       padding: 20px 0;
       &::before{
         width: 0;
-        border-right: solid 5px map_get($colors,main);
+        border-right: solid 5px map-get($colors,main);
       }
     }
     &__icons{
@@ -144,6 +177,7 @@
       padding-bottom: 20px;
     }
     .icons__text{
+      font-size: map_get($div-font-size,v-small);
       padding: 20px 0;
     }
   }
