@@ -1,5 +1,57 @@
-//$bg-color: darken(#20374E,10%);
-$bg-color: black;
-$font-color: white;
-$menu-hover-color: lighten($bg-color,20%);
+//======================================================================================================
+//=========================================== Variables ================================================
+//======================================================================================================
+$viewports: (
+  mobile: 767px,
+  tablet-lower: 768px,
+  tablet-upper: 1024px,
+  desktop: 1025px
+);
+$colors: (
+  background: black,
+  font: white,
+  main: #e5001d,
+  menu-item-border: rgba(55, 55, 55, 0.5),
+  menu-item-active: lighten(rgba(55, 55, 55, 0.5),15%)
+);
+$time: (
+  v-fast: 0.2s,
+  fast: 0.3s,
+  medium: 0.5s,
+  slow: 0.7s,
+  v-slow: 1s
+);
 $nav-bar-width: 250px;
+$margin-mobile: 20px;
+$margin-tablet: 35px;
+$margin-desktop: 25px;
+$font-size-lg: 1.5em;
+$font-size-md: 1.2em;
+$font-size-sm: 1.0em;
+$h-font-size-lg: 3.2em;
+$h-font-size-md: 2.5em;
+$h-font-size-sm: 2.0em;
+
+
+//======================================================================================================
+//=============================================== Mixins ===============================================
+//======================================================================================================
+
+//=============================================== General ===============================================
+//mixin applied to inner class, applies left and right padding and max-width
+@mixin inner{
+  @media only screen and (max-width: 767px) {
+    margin: 0 auto;
+    padding: 0 $margin-mobile;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1024px){
+    margin: 0 auto;
+    padding: 0 $margin-tablet;
+  }
+  @media only screen and (min-width: 1025px) {
+    max-width: 1140px;
+    margin: 0 auto 0 $nav-bar-width;
+    padding-left: $margin-desktop;
+  }
+}
+//mixin for responsive font for div

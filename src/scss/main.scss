@@ -5,8 +5,7 @@
 /*========================================== General Styling =============================================*/
 /*========================================================================================================*/
 .inner{
-  max-width: 1140px;
-  margin: 0 auto 0 $nav-bar-width;
+  @include inner;
 }
 .img{
   &-responsive{
@@ -22,9 +21,9 @@ html{
   box-sizing: inherit;
 }
 body{
-  background-color: $bg-color;
+  background-color: map_get($colors,background);
   font-family: 'Roboto', sans-serif;
-  color: $font-color;
+  color: map_get($colors,font);
 }
 a{
   text-decoration: none;
@@ -38,6 +37,15 @@ a{
 @import 'partials/_footer';
 @import 'partials/_home';
 @import 'partials/_projects';
+
+
+
+
+
+
+
+
+
 
 .test{
   margin-top: 300px;

@@ -4,10 +4,53 @@
 /*============================================== Header ==================================================*/
 /*========================================================================================================*/
 .menu{
-  background-color: black;
+  background-color: map_get($colors,background);
   text-align: center;
-  z-index: 30;
+  z-index: 10;
   font-size: 20px;
+  &__logo{
+    margin-left: 0;
+  }
+  &__logo-wrapper{
+    margin-left: 0;
+  }
+  &__item{
+    position: relative;
+    overflow: hidden;
+  }
+  &__link{
+    color: map_get($colors,font);
+    display: block;
+    font-family: 'Crete Round', serif;
+    position: relative;
+    transition: all map_get($time,fast);
+    z-index: 10;
+    &::before{
+      content:'';
+      z-index: -1;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: all map_get($time,fast);
+      background: map_get($colors,menu-item-border);
+    }
+    &:hover{
+      color: map_get($colors,main);
+    }
+    &:hover::before{
+      width: 100%;
+      height: 100%;
+    }
+    &:active::before{
+      background: map_get($colors,menu-item-active);
+    }
+    &:active{
+      text-shadow: 1px -1px map_get($colors,background);
+    }
+  }
+  &__icons{
+    display: none;
+  }
 }
 .header__img-wrapper{
   position: relative;
@@ -15,9 +58,6 @@
 .header__img{
   object-fit: cover;
   height: 800px;
-}
-.menu__link{
-  color: $font-color;
 }
 .header__title{
   position: absolute;
@@ -28,59 +68,84 @@
   text-align: center;
   margin: 0 auto;
   font-size: 60px;
-
-}
-.menu__item, .header__title{
+  color: map_get($colors,main);
   font-family: 'Crete Round', serif;
 }
+
 /* ------------------- <767px   SECTION ------------------- */
 @media only screen and (max-width: 767px) {
+  .menu{
 
+  }
 }
-/* ------------------- >768px SECTION --------------------- */
+/* ------------------- >768px & <1024px SECTION ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px){
   .menu{
-    display: flex;
-    justify-content: space-between;
+    padding: 0 $margin-tablet;
+    background-image: url("../../../dist/img/nav-bar/navbar-background-mobile.jpg");
+    background-size: cover;
+    background-position: bottom right;
+    &__wrapper{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__logo-wrapper{
+      padding-right: 50px;
+    }
+    &__item{
+      width: 100%;
+      border-right: solid 1px map_get($colors,menu-item-border);
+      &:nth-child(2){
+        @debug "_header.scss assumes six divs with menu__item class";
+        border-left: solid 1px map_get($colors,menu-item-border);
+      }
+    }
+    &__link{
+      padding: 40px 0;
+      &::before{
+        height: 0;
+        border-bottom: solid 5px map_get($colors,main);
+      }
+    }
   }
 }
 /* ------------------- >1025px SECTION -------------------- */
 @media only screen and (min-width: 1025px) {
   .menu{
-    background-image: url("../../../dist/img/_raw/test-6.jpg");
-    background-size: cover;
-    background-position: bottom right;
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: $nav-bar-width;
     overflow-x: auto;
-  }
-  .menu__logo{
-    display: block;
-    padding: 20px 60px;
-  }
-  .menu__link{
-    display: block;
-    padding: 20px 0;
-  }
-  .menu__item{
-    border-top: solid 1px $menu-hover-color;
-    &:nth-child(6){
-      @debug "_header.scss assumes six divs with menu__item class";
-      border-bottom: solid 1px $menu-hover-color;
+    background-image: url("../../../dist/img/nav-bar/navbar-background-desktop.jpg");
+    background-size: cover;
+    background-position: bottom right;
+    &__logo{
+      padding: 20px 60px;
     }
-  }
-  .menu__icons{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding-bottom: 20px;
-  }
-  .icons__text{
-    padding: 20px 0;
+    &__item{
+      border-top: solid 1px map_get($colors,menu-item-border);
+      &:nth-child(6){
+        @debug "_header.scss assumes six divs with menu__item class";
+        border-bottom: solid 1px map_get($colors,menu-item-border);
+      }
+    }
+    &__link{
+      padding: 20px 0;
+      &::before{
+        width: 0;
+        border-right: solid 5px map_get($colors,main);
+      }
+    }
+    &__icons{
+      display: block;
+      padding-bottom: 20px;
+    }
+    .icons__text{
+      padding: 20px 0;
+    }
   }
   .header{
     width: 100%;

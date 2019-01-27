@@ -16,6 +16,8 @@ const optimization = {
 const entry = {
     'index': [
         './src/js/index.js',
+        './src/js/modules/header.js',
+        './src/js/modules/projects.js',
         './src/scss/main.scss'
     ]
 };
