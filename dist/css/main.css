@@ -111,17 +111,16 @@ a {
     .menu__link:hover {
       color: #E31D3B; }
     .menu__link:active {
-      text-shadow: 1px -1px black; }
+      text-shadow: 1px -2px black; }
 
-.header-wrapper {
+.header__wrapper {
   position: relative; }
 
 .header__img {
   -o-object-fit: cover;
-     object-fit: cover;
-  height: 800px; }
+     object-fit: cover; }
 
-.header__title {
+.header__text {
   position: absolute;
   top: 50%;
   left: 0;
@@ -134,7 +133,7 @@ a {
   color: #E31D3B;
   font-family: 'Crete Round', serif; }
 
-/* ------------------- <767px   SECTION ------------------- */
+/* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .menu__toggle {
     display: block;
@@ -150,50 +149,20 @@ a {
     padding: 0 20px;
     min-height: 100px; }
   .menu__link {
-    font-size: 1em;
+    font-size: 16px;
     padding: 10px 0;
     border-top: solid 1px rgba(55, 55, 55, 0.5); }
     .menu__link:hover {
       background: rgba(55, 55, 55, 0.5); }
     .menu__link:active {
-      background: rgba(93, 93, 93, 0.5); } }
+      background: rgba(93, 93, 93, 0.5); }
+  .header__img {
+    max-height: 350px; } }
 
-/* ---------------------- >768px SECTION ------------------ */
-@media only screen and (min-width: 768px) {
-  .menu {
-    z-index: 10; }
-    .menu__item {
-      position: relative;
-      overflow: hidden; }
-    .menu__link {
-      font-size: 1.25em;
-      position: relative;
-      z-index: 10; }
-      .menu__link::before {
-        content: '';
-        z-index: -1;
-        position: absolute;
-        left: 0;
-        top: 0;
-        background: rgba(55, 55, 55, 0.5);
-        transition: all 0.3s; }
-      .menu__link:hover {
-        color: #E31D3B; }
-      .menu__link:hover::before {
-        width: 100%;
-        height: 100%; }
-      .menu__link:active::before {
-        background: rgba(93, 93, 93, 0.5); }
-      .menu__link:active {
-        text-shadow: 1px -1px black; } }
-
-/* ------------------- >768px & <1024px SECTION ----------- */
+/* ------------------- TABLET SECTION ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .menu {
-    padding: 0 30px;
-    background-image: url("../../../dist/img/nav-bar/navbar-background-mobile.jpg");
-    background-size: cover;
-    background-position: bottom right; }
+    padding: 0 30px; }
     .menu__wrapper {
       display: flex;
       justify-content: space-between;
@@ -209,9 +178,36 @@ a {
       padding: 40px 0; }
       .menu__link::before {
         height: 0;
-        border-bottom: solid 5px #E31D3B; } }
+        border-bottom: solid 5px #E31D3B; }
+  .header__img {
+    max-height: 550px; } }
 
-/* ------------------- >1025px SECTION -------------------- */
+/* --------------- TABLET AND DESKTOP SECTION -------------- */
+@media only screen and (min-width: 768px) {
+  .menu {
+    z-index: 10; }
+    .menu__item {
+      position: relative;
+      overflow: hidden; }
+    .menu__link {
+      font-size: 20px;
+      position: relative;
+      z-index: 10; }
+      .menu__link::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: rgba(55, 55, 55, 0.5);
+        transition: all 0.3s; }
+      .menu__link:hover::before {
+        width: 100%;
+        height: 100%; }
+      .menu__link:active::before {
+        background: rgba(93, 93, 93, 0.5); } }
+
+/* ------------------- DESKTOP SECTION -------------------- */
 @media only screen and (min-width: 1025px) {
   .menu {
     position: fixed;
@@ -242,7 +238,9 @@ a {
       padding: 20px 0; }
   .header {
     width: 100%;
-    padding-left: 250px; } }
+    padding-left: 250px; }
+    .header__img {
+      max-height: 700px; } }
 
 .test {
   margin-top: 300px;

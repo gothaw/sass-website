@@ -4,7 +4,7 @@
 /*============================================== Header ==================================================*/
 /*========================================================================================================*/
 .menu{
-  background-color: map-get($colors,background);
+  background-color: color(background);
   text-align: center;
   &__toggle{
     display: none;
@@ -13,26 +13,27 @@
     display: none;
   }
   &__link{
-    color: map-get($colors,font);
+    color: color(font);
     display: block;
     font-family: 'Crete Round', serif;
-    transition: all map-get($time,fast);
+    transition: all duration(fast);
     &:hover{
-      color: map-get($colors,main);
+      color: color(main);
     }
     &:active{
-      text-shadow: 1px -1px map-get($colors,background);
+      text-shadow: 1px -2px color(background);
     }
   }
 }
-.header-wrapper{
-  position: relative;
+.header{
+  &__wrapper{
+    position: relative;
+  }
+  &__img{
+    object-fit: cover;
+  }
 }
-.header__img{
-  object-fit: cover;
-  height: 800px;
-}
-.header__title{
+.header__text{
   position: absolute;
   top: 50%;
   left: 0;
@@ -41,12 +42,12 @@
   text-align: center;
   margin: 0 auto;
   font-size: 60px;
-  color: map-get($colors,main);
+  color: color(main);
   font-family: 'Crete Round', serif;
 }
 
-/* ------------------- <767px   SECTION ------------------- */
-@media only screen and (max-width: 767px) {
+/* ------------------- MOBILE SECTION ------------------- */
+@media only screen and (max-width: #{$mobile}) {
   .menu{
     &__toggle{
       display: block;
@@ -57,67 +58,31 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 map-get($side-padding,mobile);
-      min-height: 100px;
+      padding: 0 side-padding(mobile);
+      min-height: $nav-bar-height;
     }
     &__link{
-      font-size: map_get($div-font-size,small);
+      font-size: $menu-font-small;
       padding: 10px 0;
-      border-top: solid 1px map-get($colors,menu-item-accent);
+      border-top: solid 1px color(menu-item-accent);
       &:hover{
-        background: map-get($colors,menu-item-accent);
+        background: color(menu-item-accent);
       }
       &:active{
-        background: map-get($colors,menu-item-active);
+        background: color(menu-item-active);
       }
     }
   }
-}
-/* ---------------------- >768px SECTION ------------------ */
-@media only screen and (min-width: 768px){
-  .menu{
-    z-index: 10;
-    &__item{
-      position: relative;
-      overflow: hidden;
-    }
-    &__link{
-      font-size: map_get($div-font-size,medium);
-      position: relative;
-      z-index: 10;
-      &::before{
-        content:'';
-        z-index: -1;
-        position: absolute;
-        left: 0;
-        top: 0;
-        background: map-get($colors,menu-item-accent);
-        transition: all map-get($time,fast);
-      }
-      &:hover{
-        color: map-get($colors,main);
-      }
-      &:hover::before{
-        width: 100%;
-        height: 100%;
-      }
-      &:active::before{
-        background: map-get($colors,menu-item-active);
-      }
-      &:active{
-        text-shadow: 1px -1px map-get($colors,background);
-      }
+  .header{
+    &__img{
+      max-height: 350px;
     }
   }
 }
-
-/* ------------------- >768px & <1024px SECTION ----------- */
-@media only screen and (min-width: 768px) and (max-width: 1024px){
+/* ------------------- TABLET SECTION ----------- */
+@media only screen and (min-width: #{$tablet-lower}) and (max-width: #{$tablet-upper}){
   .menu{
-    padding: 0 map-get($side-padding,tablet);
-    background-image: url("../../../dist/img/nav-bar/navbar-background-mobile.jpg");
-    background-size: cover;
-    background-position: bottom right;
+    padding: 0 side-padding(tablet);
     &__wrapper{
       display: flex;
       justify-content: space-between;
@@ -128,23 +93,60 @@
     }
     &__item{
       width: 100%;
-      border-right: solid 1px map-get($colors,menu-item-accent);
+      border-right: solid 1px color(menu-item-accent);
       &:nth-child(2){
         @debug "_header.scss assumes six divs with menu__item class";
-        border-left: solid 1px map-get($colors,menu-item-accent);
+        border-left: solid 1px color(menu-item-accent);
       }
     }
     &__link{
-      padding: 40px 0;
+      @debug "vertical padding is designed to sum up 100px with font size";
+      padding: (($nav-bar-height - $menu-font-medium)/2) 0;
       &::before{
         height: 0;
-        border-bottom: solid 5px map-get($colors,main);
+        border-bottom: solid 5px color(main);
+      }
+    }
+  }
+  .header{
+    &__img{
+      max-height: 550px;
+    }
+  }
+}
+/* --------------- TABLET AND DESKTOP SECTION -------------- */
+@media only screen and (min-width: #{$tablet-lower}){
+  .menu{
+    z-index: 10;
+    &__item{
+      position: relative;
+      overflow: hidden;
+    }
+    &__link{
+      font-size: $menu-font-medium;
+      position: relative;
+      z-index: 10;
+      &::before{
+        content:'';
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: color(menu-item-accent);
+        transition: all duration(fast);
+      }
+      &:hover::before{
+        width: 100%;
+        height: 100%;
+      }
+      &:active::before{
+        background: color(menu-item-active);
       }
     }
   }
 }
-/* ------------------- >1025px SECTION -------------------- */
-@media only screen and (min-width: 1025px) {
+/* ------------------- DESKTOP SECTION -------------------- */
+@media only screen and (min-width: #{$desktop}) {
   .menu{
     position: fixed;
     top: 0;
@@ -159,17 +161,17 @@
       padding: 20px 60px;
     }
     &__item{
-      border-top: solid 1px map-get($colors,menu-item-accent);
+      border-top: solid 1px color(menu-item-accent);
       &:nth-child(6){
         @debug "_header.scss assumes six divs with menu__item class";
-        border-bottom: solid 1px map-get($colors,menu-item-accent);
+        border-bottom: solid 1px color(menu-item-accent);
       }
     }
     &__link{
       padding: 20px 0;
       &::before{
         width: 0;
-        border-right: solid 5px map-get($colors,main);
+        border-right: solid 5px color(main);
       }
     }
     &__icons{
@@ -177,12 +179,15 @@
       padding-bottom: 20px;
     }
     .icons__text{
-      font-size: map_get($div-font-size,v-small);
+      font-size: div-font-size(v-small);
       padding: 20px 0;
     }
   }
   .header{
     width: 100%;
     padding-left: $nav-bar-width;
+    &__img{
+      max-height: 700px;
+    }
   }
 }

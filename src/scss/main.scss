@@ -21,9 +21,9 @@ html{
   box-sizing: inherit;
 }
 body{
-  background-color: map_get($colors,background);
+  background-color: color(background);
   font-family: 'Roboto', sans-serif;
-  color: map_get($colors,font);
+  color: color(font);
 }
 a{
   text-decoration: none;

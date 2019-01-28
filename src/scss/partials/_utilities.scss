@@ -8,12 +8,12 @@
 //======================================================================================================
 $nav-bar-width: 250px;
 $nav-bar-height: 100px;
-$viewports: (
-  mobile: 767px,
-  tablet-lower: 768px,
-  tablet-upper: 1024px,
-  desktop: 1025px
-);
+$mobile: 767px;
+$tablet-lower: 768px;
+$tablet-upper: 1024px;
+$desktop: 1025px;
+$menu-font-medium: 20px;
+$menu-font-small: 16px;
 $colors: (
   background: black,
   font: white,
@@ -21,7 +21,7 @@ $colors: (
   menu-item-accent: rgba(55, 55, 55, 0.5),
   menu-item-active: lighten(rgba(55, 55, 55, 0.5),15%)
 );
-$time: (
+$duration: (
   v-fast: 0.2s,
   fast: 0.3s,
   medium: 0.5s,
@@ -35,35 +35,76 @@ $side-padding: (
 );
 $div-font-size: (
   large: 1.5 em,
-  medium: 1.25em,
+  medium: 1.2em,
   small: 1.0em,
   v-small: 0.875em
 );
-
 $h-font-size-lg: 3.2em;
 $h-font-size-md: 2.5em;
 $h-font-size-sm: 2.0em;
+//======================================================================================================
+//============================================ Functions ===============================================
+//======================================================================================================
 
-
+//=============================================== General ===============================================
+//function returns a color from $colors map using map-get
+@function color($color-name){
+  @return map-get($colors,$color-name)
+}
+//function returns a padding value from $side-padding map using map-get
+@function side-padding($device-name){
+  @return map-get($side-padding,$device-name)
+}
+//function returns a duration in seconds from $duration map using map-get
+@function duration($duration-value){
+  @return map-get($duration,$duration-value)
+}
+//function returns a font size from $div-font-size map using map-get
+@function div-font-size($font-size){
+  @return map-get($div-font-size,$font-size)
+}
 //======================================================================================================
 //=============================================== Mixins ===============================================
 //======================================================================================================
 
 //=============================================== General ===============================================
-//mixin applied to inner class, applies left and right padding and max-width
-@mixin inner{
-  @media only screen and (max-width: 767px) {
-    margin: 0 auto;
-    padding: 0 map-get($side-padding,mobile);
-  }
-  @media only screen and (min-width: 768px) and (max-width: 1024px){
-    margin: 0 auto;
-    padding: 0 map-get($side-padding,tablet);
-  }
-  @media only screen and (min-width: 1025px) {
-    max-width: 1140px;
-    margin: 0 auto 0 $nav-bar-width;
-    padding-left: map-get($side-padding,desktop);
+//mixin with media query for mobile
+@mixin mobile{
+  @media only screen and (max-width: #{$mobile}) {
+    @content;
   }
 }
-//=============================================== General ===============================================
+//mixin with media query for tablet
+@mixin tablet{
+  @media only screen and (min-width: #{$tablet-lower}) and (max-width: #{$tablet-upper}){
+    @content;
+  }
+}
+//mixin with media query for tablet and desktop
+@mixin tablet-and-desktop{
+  @media only screen and (min-width: #{$tablet-lower}){
+    @content;
+  }
+}
+//mixin with media query for desktop
+@mixin desktop{
+  @media only screen and (min-width: #{$desktop}){
+    @content;
+  }
+}
+//mixin applied to inner class, applies left and right padding and max-width
+@mixin inner{
+  @include mobile{
+    margin: 0 auto;
+    padding: 0 side-padding(mobile);
+  }
+  @include tablet{
+    margin: 0 auto;
+    padding: 0 side-padding(tablet);
+  }
+  @include desktop{
+    max-width: 1140px;
+    margin: 0 auto 0 $nav-bar-width;
+    padding-left: side-padding(desktop);
+  }
+}
