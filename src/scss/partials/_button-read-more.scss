@@ -1,0 +1,54 @@
+//============================================= Imports ==================================================
+@import '_utilities';
+/*========================================================================================================*/
+/*========================================== Read More Button ============================================*/
+/*========================================================================================================*/
+.button-read-more{
+
+  border: solid color(main) 3px;
+  font-weight: bold;
+  text-align: center;
+  width: 200px;
+  &__link{
+    color: color(main);
+    display: block;
+    position: relative;
+    font-family: 'Crete Round', serif;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    &:hover{
+      color: color(font);
+      background-color: color(main);
+    }
+    &:active{
+      color: color(background);
+    }
+  }
+}
+/* ------------------- MOBILE SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .button-read-more{
+
+    &__link {
+
+    }
+  }
+}
+/* --------------- TABLET AND DESKTOP SECTION -------------- */
+@media only screen and (min-width: 768px) {
+  .button-read-more{
+
+    &__link {
+      font-size: 1.5em;
+      padding: 20px 0;
+    }
+  }
+}
+/* ------------------- DESKTOP SECTION -------------------- */
+@media only screen and (min-width: 1025px) {
+  .button-read-more{
+    &__link {
+
+    }
+  }
+}

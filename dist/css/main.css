@@ -123,15 +123,27 @@ a {
 .header__text {
   position: absolute;
   top: 50%;
-  left: 0;
-  right: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  text-align: center;
-  margin: 0 auto;
-  font-size: 60px;
-  color: #E31D3B;
+  left: 0;
+  color: black;
   font-family: 'Crete Round', serif; }
+
+.header__title {
+  position: relative; }
+
+.header__typing-animation {
+  position: relative; }
+  .header__typing-animation::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    bottom: 50%;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+    width: 6px;
+    height: 70%;
+    background-color: #E31D3B; }
 
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: 767px) {
@@ -157,7 +169,7 @@ a {
     .menu__link:active {
       background: rgba(93, 93, 93, 0.5); }
   .header__img {
-    max-height: 350px; } }
+    max-height: 400px; } }
 
 /* ------------------- TABLET SECTION ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -180,7 +192,7 @@ a {
         height: 0;
         border-bottom: solid 5px #E31D3B; }
   .header__img {
-    max-height: 550px; } }
+    max-height: 600px; } }
 
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
 @media only screen and (min-width: 768px) {
@@ -240,8 +252,45 @@ a {
     width: 100%;
     padding-left: 250px; }
     .header__img {
-      max-height: 700px; } }
+      max-height: 800px; }
+    .header__text {
+      padding-left: 50px; }
+    .header__title {
+      font-size: 3.2em;
+      line-height: 1.1em; }
+    .header__subtitle {
+      font-size: 2.2em;
+      line-height: 1.6em; } }
 
+/*========================================================================================================*/
+/*========================================== Read More Button ============================================*/
+/*========================================================================================================*/
+.button-read-more {
+  border: solid #E31D3B 3px;
+  font-weight: bold;
+  text-align: center;
+  width: 200px; }
+  .button-read-more__link {
+    color: #E31D3B;
+    display: block;
+    position: relative;
+    font-family: 'Crete Round', serif;
+    text-transform: uppercase;
+    transition: all 0.3s; }
+    .button-read-more__link:hover {
+      color: white;
+      background-color: #E31D3B; }
+    .button-read-more__link:active {
+      color: black; }
+
+/* ------------------- MOBILE SECTION ------------------- */
+/* --------------- TABLET AND DESKTOP SECTION -------------- */
+@media only screen and (min-width: 768px) {
+  .button-read-more__link {
+    font-size: 1.5em;
+    padding: 20px 0; } }
+
+/* ------------------- DESKTOP SECTION -------------------- */
 .test {
   margin-top: 300px;
   text-align: center; }

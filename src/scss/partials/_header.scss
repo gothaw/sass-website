@@ -32,18 +32,32 @@
   &__img{
     object-fit: cover;
   }
-}
-.header__text{
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  text-align: center;
-  margin: 0 auto;
-  font-size: 60px;
-  color: color(main);
-  font-family: 'Crete Round', serif;
+  &__text{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    color: black;
+    font-family: 'Crete Round', serif;
+  }
+  &__title{
+    position: relative;
+  }
+  &__subtitle{
+  }
+  &__typing-animation{
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      right: -6px;
+      bottom: 50%;
+      transform: translateY(50%);
+      width: 6px;
+      height: 70%;
+      background-color: color(main);
+    }
+  }
 }
 
 /* ------------------- MOBILE SECTION ------------------- */
@@ -75,7 +89,13 @@
   }
   .header{
     &__img{
-      max-height: 350px;
+      max-height: 400px;
+    }
+    &__text{
+    }
+    &__title{
+    }
+    &__subtitle{
     }
   }
 }
@@ -110,7 +130,13 @@
   }
   .header{
     &__img{
-      max-height: 550px;
+      max-height: 600px;
+    }
+    &__text{
+    }
+    &__title{
+    }
+    &__subtitle{
     }
   }
 }
@@ -187,7 +213,18 @@
     width: 100%;
     padding-left: $nav-bar-width;
     &__img{
-      max-height: 700px;
+      max-height: 800px;
+    }
+    &__text{
+      padding-left: 50px;
+    }
+    &__title{
+      font-size: 3.2em;
+      line-height: 1.1em;
+    }
+    &__subtitle{
+      font-size: 2.2em;
+      line-height: 1.6em;
     }
   }
 }
