@@ -60,10 +60,15 @@
             </nav> <!--/menu-->
             <div class="header">
                 <div class="header__wrapper">
-                    <img class="header__img img-responsive" src="dist/img/_raw/blank-business-composition-373076.jpg" width="" height="" alt="">
+                    <picture>
+                        <source media="print" srcset="dist/img/header/header-img-large.jpg">
+                        <source media="(max-width: 1025px)" srcset="dist/img/header/header-img-1080.jpg">
+                        <source media="(max-width: 1440px)" srcset="dist/img/header/header-img-1440.jpg">
+                        <img class="header__img img-responsive" src="dist/img/header/header-img-large.jpg" alt="mobile, keyboard and stationary on a white background"> <!--/header__img img-responsive-->
+                    </picture>
                     <div class="header__text">
                         <h1 class="header__title"> Hi! My name is John Doe. I am a Software Developer.</h1> <!--/header__title-->
-                        <h2 class="header__title">I have experience working with <span class="header__typing-animation">Front-end.</span></h2> <!--/header__subtitle-->
+                        <h2 class="header__title">I have experience working with <span class="header__typing-animation">Node.js.</span></h2> <!--/header__subtitle-->
                         <h2 class="header__subtitle">Feel free to check out my work:</h2> <!--/header__subtitle-->
                         <div class="button-read-more">
                             <a class="button-read-more__link" href="#">Projects</a>

@@ -108,3 +108,25 @@ $h-font-size-sm: 2.0em;
     padding-left: side-padding(desktop);
   }
 }
+//=============================================== Header ===============================================
+@mixin typing-animation{
+  position: relative;
+  &::after{
+    content: '';
+    position: absolute;
+    right: -6px;
+    bottom: 50%;
+    transform: translateY(50%);
+    height: 70%;
+    background-color: color(main);
+    @include mobile{
+      width: 3px;
+    }
+    @include tablet{
+      width: 4px;
+    }
+    @include desktop{
+      width: 6px;
+    }
+  }
+}

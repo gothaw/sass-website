@@ -117,20 +117,27 @@ a {
   position: relative; }
 
 .header__img {
+  max-height: 600px;
   -o-object-fit: cover;
      object-fit: cover; }
 
 .header__text {
   position: absolute;
-  top: 50%;
+  top: 55%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   left: 0;
+  right: 0;
   color: black;
-  font-family: 'Crete Round', serif; }
+  font-family: 'Crete Round', serif;
+  text-align: center; }
 
 .header__title {
-  position: relative; }
+  position: relative;
+  line-height: 1.1em; }
+
+.header__subtitle {
+  padding-top: 10px; }
 
 .header__typing-animation {
   position: relative; }
@@ -141,9 +148,17 @@ a {
     bottom: 50%;
     -webkit-transform: translateY(50%);
             transform: translateY(50%);
-    width: 6px;
     height: 70%;
     background-color: #E31D3B; }
+    @media only screen and (max-width: 767px) {
+      .header__typing-animation::after {
+        width: 3px; } }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      .header__typing-animation::after {
+        width: 4px; } }
+    @media only screen and (min-width: 1025px) {
+      .header__typing-animation::after {
+        width: 6px; } }
 
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: 767px) {
@@ -168,8 +183,12 @@ a {
       background: rgba(55, 55, 55, 0.5); }
     .menu__link:active {
       background: rgba(93, 93, 93, 0.5); }
-  .header__img {
-    max-height: 400px; } }
+  .header__text {
+    padding: 0 20px; }
+  .header__title {
+    font-size: 1.5em; }
+  .header__subtitle {
+    display: none; } }
 
 /* ------------------- TABLET SECTION ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -191,8 +210,12 @@ a {
       .menu__link::before {
         height: 0;
         border-bottom: solid 5px #E31D3B; }
-  .header__img {
-    max-height: 600px; } }
+  .header__text {
+    padding: 0 30px; }
+  .header__title {
+    font-size: 2.2em; }
+  .header__subtitle {
+    font-size: 2em; } }
 
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
 @media only screen and (min-width: 768px) {
@@ -254,43 +277,64 @@ a {
     .header__img {
       max-height: 800px; }
     .header__text {
-      padding-left: 50px; }
+      padding: 0 25px;
+      text-align: left; }
     .header__title {
-      font-size: 3.2em;
-      line-height: 1.1em; }
+      font-size: 2.7em; }
     .header__subtitle {
-      font-size: 2.2em;
-      line-height: 1.6em; } }
+      font-size: 2.2em; } }
 
 /*========================================================================================================*/
 /*========================================== Read More Button ============================================*/
 /*========================================================================================================*/
 .button-read-more {
-  border: solid #E31D3B 3px;
-  font-weight: bold;
-  text-align: center;
-  width: 200px; }
+  font-weight: bold; }
   .button-read-more__link {
     color: #E31D3B;
-    display: block;
     position: relative;
     font-family: 'Crete Round', serif;
     text-transform: uppercase;
-    transition: all 0.3s; }
+    border: solid black 3px; }
+    .button-read-more__link:active {
+      border: solid #E31D3B 3px;
+      color: black !important;
+      text-shadow: none !important; }
     .button-read-more__link:hover {
       color: white;
-      background-color: #E31D3B; }
-    .button-read-more__link:active {
-      color: black; }
+      text-shadow: 2px 1px #5c0b18; }
+    .button-read-more__link::before {
+      background: #E31D3B;
+      content: '';
+      width: 100%;
+      position: absolute;
+      transition: all 0.3s;
+      bottom: -1%;
+      left: 0;
+      height: 0;
+      z-index: -1; }
+    .button-read-more__link:hover::before {
+      height: 102%; }
+    .button-read-more__link:active::before {
+      background: white; }
 
 /* ------------------- MOBILE SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .button-read-more {
+    display: none; } }
+
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
 @media only screen and (min-width: 768px) {
-  .button-read-more__link {
-    font-size: 1.5em;
-    padding: 20px 0; } }
+  .button-read-more {
+    margin-top: 35px; }
+    .button-read-more__link {
+      font-size: 1.5em;
+      padding: 10px 25px; } }
 
 /* ------------------- DESKTOP SECTION -------------------- */
+@media only screen and (min-width: 1025px) {
+  .button-read-more__link {
+    padding: 15px 30px; } }
+
 .test {
   margin-top: 300px;
   text-align: center; }

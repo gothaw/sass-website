@@ -4,51 +4,60 @@
 /*========================================== Read More Button ============================================*/
 /*========================================================================================================*/
 .button-read-more{
-
-  border: solid color(main) 3px;
   font-weight: bold;
-  text-align: center;
-  width: 200px;
   &__link{
     color: color(main);
-    display: block;
     position: relative;
     font-family: 'Crete Round', serif;
     text-transform: uppercase;
-    transition: all 0.3s;
+    border: solid color(background) 3px;
+    &:active{
+      border: solid color(main) 3px;
+      color: color(background) !important;
+      text-shadow: none !important;
+    }
     &:hover{
       color: color(font);
-      background-color: color(main);
+      text-shadow: 2px 1px darken(color(main),30%);
     }
-    &:active{
-      color: color(background);
+    &::before{
+      background: color(main);
+      content: '';
+      width: 100%;
+      position: absolute;
+      transition: all duration(fast);
+      bottom: -1%;
+      left: 0;
+      height: 0;
+      z-index: -1;
+    }
+    &:hover::before {
+      height: 102%;
+    }
+    &:active::before {
+      background: color(font);
     }
   }
 }
 /* ------------------- MOBILE SECTION ------------------- */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: #{$mobile}) {
   .button-read-more{
-
-    &__link {
-
-    }
+    display: none;
   }
 }
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: #{$tablet-lower}) {
   .button-read-more{
-
+    margin-top: 35px;
     &__link {
       font-size: 1.5em;
-      padding: 20px 0;
+      padding: 10px 25px;
     }
   }
 }
 /* ------------------- DESKTOP SECTION -------------------- */
-@media only screen and (min-width: 1025px) {
-  .button-read-more{
-    &__link {
-
-    }
+@media only screen and (min-width: #{$desktop}) {
+  .button-read-more__link {
+      padding: 15px 30px;
   }
 }

@@ -30,33 +30,28 @@
     position: relative;
   }
   &__img{
+    max-height: 600px;
     object-fit: cover;
   }
   &__text{
     position: absolute;
-    top: 50%;
+    top: 55%;
     transform: translateY(-50%);
     left: 0;
+    right: 0;
     color: black;
     font-family: 'Crete Round', serif;
+    text-align: center;
   }
   &__title{
     position: relative;
+    line-height: 1.1em;
   }
   &__subtitle{
+    padding-top: 10px;
   }
   &__typing-animation{
-    position: relative;
-    &::after{
-      content: '';
-      position: absolute;
-      right: -6px;
-      bottom: 50%;
-      transform: translateY(50%);
-      width: 6px;
-      height: 70%;
-      background-color: color(main);
-    }
+    @include typing-animation;
   }
 }
 
@@ -88,14 +83,14 @@
     }
   }
   .header{
-    &__img{
-      max-height: 400px;
-    }
     &__text{
+      padding: 0 side-padding(mobile);
     }
     &__title{
+      font-size: 1.5em;
     }
     &__subtitle{
+      display: none;
     }
   }
 }
@@ -129,14 +124,14 @@
     }
   }
   .header{
-    &__img{
-      max-height: 600px;
-    }
     &__text{
+      padding: 0 side-padding(tablet);
     }
     &__title{
+      font-size: 2.2em;
     }
     &__subtitle{
+      font-size: 2em;
     }
   }
 }
@@ -216,15 +211,14 @@
       max-height: 800px;
     }
     &__text{
-      padding-left: 50px;
+      padding: 0 side-padding(desktop);
+      text-align: left;
     }
     &__title{
-      font-size: 3.2em;
-      line-height: 1.1em;
+      font-size: 2.7em;
     }
     &__subtitle{
       font-size: 2.2em;
-      line-height: 1.6em;
     }
   }
 }
