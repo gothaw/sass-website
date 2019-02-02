@@ -33,15 +33,23 @@ $side-padding: (
   tablet: 30px,
   desktop: 25px
 );
+$vertical-padding: (
+  large: 60px,
+  medium: 30px,
+  small: 20px
+);
 $div-font-size: (
-  large: 1.5 em,
+  large: 1.5em,
   medium: 1.2em,
   small: 1.0em,
   v-small: 0.875em
 );
-$h-font-size-lg: 3.2em;
-$h-font-size-md: 2.5em;
-$h-font-size-sm: 2.0em;
+$title-font-size: (
+  large: 2.7em,
+  medium: 2.2em,
+  small: 1.9em,
+  v-small: 1.5em
+);
 //======================================================================================================
 //============================================ Functions ===============================================
 //======================================================================================================
@@ -55,6 +63,10 @@ $h-font-size-sm: 2.0em;
 @function side-padding($device-name){
   @return map-get($side-padding,$device-name)
 }
+//function returns a padding value from $vertical-padding map using map-get
+@function vertical-padding($padding){
+  @return map-get($vertical-padding,$padding)
+}
 //function returns a duration in seconds from $duration map using map-get
 @function duration($duration-value){
   @return map-get($duration,$duration-value)
@@ -62,6 +74,10 @@ $h-font-size-sm: 2.0em;
 //function returns a font size from $div-font-size map using map-get
 @function div-font-size($font-size){
   @return map-get($div-font-size,$font-size)
+}
+//function returns a font size from $title-font-size map using map-get
+@function title-font-size($font-size){
+  @return map-get($title-font-size,$font-size)
 }
 //======================================================================================================
 //=============================================== Mixins ===============================================
@@ -108,6 +124,33 @@ $h-font-size-sm: 2.0em;
     padding-left: side-padding(desktop);
   }
 }
+//mixing for section heading styling
+@mixin section-title{
+  color: color(main);
+  font-family: 'Crete Round', serif;
+  @include mobile{
+    font-size: title-font-size(v-small);
+    padding-top: vertical-padding(small);
+  }
+  @include tablet{
+    font-size: title-font-size(medium);
+    padding-top: vertical-padding(medium);
+  }
+  @include desktop{
+    font-size: title-font-size(large);
+    padding-top: vertical-padding(medium);
+  }
+}
+@mixin section-text{
+  padding-top: vertical-padding(small);
+  line-height: 1em;
+  @include mobile{
+    font-size: div-font-size(small);
+  }
+  @include tablet-and-desktop{
+    font-size: div-font-size(medium);
+  }
+}
 //=============================================== Header ===============================================
 @mixin typing-animation{
   position: relative;
@@ -130,3 +173,4 @@ $h-font-size-sm: 2.0em;
     }
   }
 }
+//=============================================== Home =================================================

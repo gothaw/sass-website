@@ -87,7 +87,7 @@
       padding: 0 side-padding(mobile);
     }
     &__title{
-      font-size: 1.5em;
+      font-size: title-font-size(v-small);
     }
     &__subtitle{
       display: none;
@@ -128,10 +128,10 @@
       padding: 0 side-padding(tablet);
     }
     &__title{
-      font-size: 2.2em;
+      font-size: title-font-size(medium);
     }
     &__subtitle{
-      font-size: 2em;
+      font-size: title-font-size(small);
     }
   }
 }
@@ -211,14 +211,14 @@
       max-height: 800px;
     }
     &__text{
-      padding: 0 side-padding(desktop);
+      padding-left: side-padding(desktop);
       text-align: left;
     }
     &__title{
-      font-size: 2.7em;
+      font-size: title-font-size(large);
     }
     &__subtitle{
-      font-size: 2.2em;
+      font-size: title-font-size(medium);
     }
   }
 }

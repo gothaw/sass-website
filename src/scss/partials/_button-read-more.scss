@@ -18,7 +18,6 @@
     }
     &:hover{
       color: color(font);
-      text-shadow: 2px 1px darken(color(main),30%);
     }
     &::before{
       background: color(main);
