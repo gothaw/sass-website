@@ -343,21 +343,17 @@ a {
   font-family: 'Crete Round', serif; }
   @media only screen and (max-width: 767px) {
     .about__title {
-      font-size: 1.5em;
-      padding-top: 20px; } }
+      font-size: 1.5em; } }
   @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .about__title {
-      font-size: 2.2em;
-      padding-top: 30px; } }
+      font-size: 2.2em; } }
   @media only screen and (min-width: 1025px) {
     .about__title {
-      font-size: 2.7em;
-      padding-top: 30px; } }
+      font-size: 2.7em; } }
 
 .about__section {
   padding-top: 20px;
-  line-height: 1em;
-  width: 70%; }
+  line-height: 1.1em; }
   @media only screen and (max-width: 767px) {
     .about__section {
       font-size: 1em; } }
@@ -365,14 +361,25 @@ a {
     .about__section {
       font-size: 1.2em; } }
 
-.about__img-wrapper {
-  width: 30%; }
+.about__description-wrapper {
+  padding-right: 25px; }
 
-.about__description {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
+/* ------------------- MOBILE SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .about {
+    padding-top: 20px; } }
 
+/* ------------------- TABLET SECTION ----------- */
+/* --------------- TABLET AND DESKTOP SECTION -------------- */
+@media only screen and (min-width: 768px) {
+  .about {
+    padding-top: 30px; }
+    .about__description {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; } }
+
+/* ------------------- DESKTOP SECTION -------------------- */
 .test {
   margin-top: 300px;
   text-align: center; }

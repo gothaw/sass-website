@@ -11,17 +11,35 @@
   }
   &__section{
     @include section-text;
-    width: 70%;
   }
-  &__img-wrapper{
-    width: 30%;
+  &__description-wrapper{
+    padding-right: side-padding(desktop);
   }
-  &__img{
+}
+/* ------------------- MOBILE SECTION ------------------- */
+@media only screen and (max-width: #{$mobile}) {
+  .about{
+    padding-top: vertical-padding(small);
+  }
+}
+/* ------------------- TABLET SECTION ----------- */
+@media only screen and (min-width: #{$tablet-lower}) and (max-width: #{$tablet-upper}){
 
+}
+/* --------------- TABLET AND DESKTOP SECTION -------------- */
+@media only screen and (min-width: #{$tablet-lower}){
+  .about{
+    padding-top: vertical-padding(medium);
+    &__description{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
-  &__description{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+}
+/* ------------------- DESKTOP SECTION -------------------- */
+@media only screen and (min-width: #{$desktop}) {
+  .about{
+
   }
 }

@@ -130,20 +130,17 @@ $title-font-size: (
   font-family: 'Crete Round', serif;
   @include mobile{
     font-size: title-font-size(v-small);
-    padding-top: vertical-padding(small);
   }
   @include tablet{
     font-size: title-font-size(medium);
-    padding-top: vertical-padding(medium);
   }
   @include desktop{
     font-size: title-font-size(large);
-    padding-top: vertical-padding(medium);
   }
 }
 @mixin section-text{
   padding-top: vertical-padding(small);
-  line-height: 1em;
+  line-height: 1.1em;
   @include mobile{
     font-size: div-font-size(small);
   }
