@@ -343,7 +343,8 @@ a {
   font-family: 'Crete Round', serif; }
   @media only screen and (max-width: 767px) {
     .about__title {
-      font-size: 1.5em; } }
+      font-size: 1.9em;
+      text-align: center; } }
   @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .about__title {
       font-size: 2.2em; } }
@@ -356,18 +357,20 @@ a {
   line-height: 1.1em; }
   @media only screen and (max-width: 767px) {
     .about__section {
-      font-size: 1em; } }
+      font-size: 1em;
+      text-align: center; } }
   @media only screen and (min-width: 768px) {
     .about__section {
       font-size: 1.2em; } }
 
-.about__description-wrapper {
-  padding-right: 25px; }
-
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .about {
-    padding-top: 20px; } }
+    padding-top: 20px; }
+    .about__img-wrapper {
+      padding-top: 20px;
+      margin: 0 auto;
+      max-width: 280px; } }
 
 /* ------------------- TABLET SECTION ----------- */
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
@@ -377,7 +380,9 @@ a {
     .about__description {
       display: flex;
       justify-content: space-between;
-      align-items: center; } }
+      align-items: center; }
+    .about__description-wrapper {
+      padding-right: 25px; } }
 
 /* ------------------- DESKTOP SECTION -------------------- */
 .test {

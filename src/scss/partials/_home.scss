@@ -12,14 +12,16 @@
   &__section{
     @include section-text;
   }
-  &__description-wrapper{
-    padding-right: side-padding(desktop);
-  }
 }
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: #{$mobile}) {
   .about{
     padding-top: vertical-padding(small);
+    &__img-wrapper{
+      padding-top: vertical-padding(small);
+      margin: 0 auto;
+      max-width: 280px;
+    }
   }
 }
 /* ------------------- TABLET SECTION ----------- */
@@ -34,6 +36,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+    &__description-wrapper{
+      padding-right: side-padding(desktop);
     }
   }
 }

@@ -129,7 +129,8 @@ $title-font-size: (
   color: color(main);
   font-family: 'Crete Round', serif;
   @include mobile{
-    font-size: title-font-size(v-small);
+    font-size: title-font-size(small);
+    text-align: center;
   }
   @include tablet{
     font-size: title-font-size(medium);
@@ -143,6 +144,7 @@ $title-font-size: (
   line-height: 1.1em;
   @include mobile{
     font-size: div-font-size(small);
+    text-align: center;
   }
   @include tablet-and-desktop{
     font-size: div-font-size(medium);
