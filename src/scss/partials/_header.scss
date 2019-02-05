@@ -43,14 +43,14 @@
     font-family: 'Crete Round', serif;
     text-align: center;
   }
-  &__title{
+  &__heading{
     position: relative;
     line-height: 1.1em;
   }
-  &__subtitle{
+  &__subheading{
     padding-top: 10px;
   }
-  &__typing-animation{
+  &__typing-animation--active{
     @include typing-animation;
   }
 }
@@ -86,10 +86,10 @@
     &__text{
       padding: 0 side-padding(mobile);
     }
-    &__title{
-      font-size: title-font-size(v-small);
+    &__heading{
+      font-size: heading-font-size(v-small);
     }
-    &__subtitle{
+    &__subheading{
       display: none;
     }
   }
@@ -127,11 +127,11 @@
     &__text{
       padding: 0 side-padding(tablet);
     }
-    &__title{
-      font-size: title-font-size(medium);
+    &__heading{
+      font-size: heading-font-size(medium);
     }
-    &__subtitle{
-      font-size: title-font-size(small);
+    &__subheading{
+      font-size: heading-font-size(small);
     }
   }
 }
@@ -214,11 +214,11 @@
       padding-left: side-padding(desktop);
       text-align: left;
     }
-    &__title{
-      font-size: title-font-size(large);
+    &__heading{
+      font-size: heading-font-size(large);
     }
-    &__subtitle{
-      font-size: title-font-size(medium);
+    &__subheading{
+      font-size: heading-font-size(medium);
     }
   }
 }

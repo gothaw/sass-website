@@ -44,7 +44,7 @@ $div-font-size: (
   small: 1.0em,
   v-small: 0.875em
 );
-$title-font-size: (
+$heading-font-size: (
   large: 2.7em,
   medium: 2.2em,
   small: 1.9em,
@@ -75,9 +75,9 @@ $title-font-size: (
 @function div-font-size($font-size){
   @return map-get($div-font-size,$font-size)
 }
-//function returns a font size from $title-font-size map using map-get
-@function title-font-size($font-size){
-  @return map-get($title-font-size,$font-size)
+//function returns a font size from $heading-font-size map using map-get
+@function heading-font-size($font-size){
+  @return map-get($heading-font-size,$font-size)
 }
 //======================================================================================================
 //=============================================== Mixins ===============================================
@@ -125,20 +125,36 @@ $title-font-size: (
   }
 }
 //mixing for section heading styling
-@mixin section-title{
+@mixin section-heading{
   color: color(main);
   font-family: 'Crete Round', serif;
   @include mobile{
-    font-size: title-font-size(small);
+    font-size: heading-font-size(small);
     text-align: center;
   }
   @include tablet{
-    font-size: title-font-size(medium);
+    font-size: heading-font-size(medium);
   }
   @include desktop{
-    font-size: title-font-size(large);
+    font-size: heading-font-size(large);
   }
 }
+//mixing for section subheading styling
+@mixin section-subheading{
+  color: color(main);
+  font-family: 'Crete Round', serif;
+  @include mobile{
+    font-size: heading-font-size(v-small);
+    text-align: center;
+  }
+  @include tablet{
+    font-size: heading-font-size(small);
+  }
+  @include desktop{
+    font-size: heading-font-size(medium);
+  }
+}
+//mixin for standard text
 @mixin section-text{
   padding-top: vertical-padding(small);
   line-height: 1.1em;

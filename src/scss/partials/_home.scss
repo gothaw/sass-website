@@ -6,11 +6,14 @@
 
 /*=============================================== ABOUT ==================================================*/
 .about{
-  &__title{
-    @include section-title;
+  &__heading{
+    @include section-heading;
   }
   &__section{
     @include section-text;
+  }
+  &__subheading{
+    @include section-subheading;
   }
 }
 /* ------------------- MOBILE SECTION ------------------- */
@@ -39,6 +42,11 @@
     }
     &__description-wrapper{
       padding-right: side-padding(desktop);
+    }
+    &__more-info{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 }
