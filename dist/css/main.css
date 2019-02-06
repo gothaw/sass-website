@@ -377,6 +377,22 @@ a {
     .about__subheading {
       font-size: 2.2em; } }
 
+.about__tweets-wrapper {
+  width: 100%; }
+
+.about__skills-wrapper {
+  width: 100%; }
+
+.about .skill__wrapper {
+  display: flex;
+  align-items: center; }
+
+.about .skill__bar {
+  display: block;
+  width: 100%;
+  height: 30px;
+  border: solid 1px white; }
+
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .about {
@@ -399,8 +415,7 @@ a {
       padding-right: 25px; }
     .about__more-info {
       display: flex;
-      justify-content: space-between;
-      align-items: center; } }
+      justify-content: space-between; } }
 
 /* ------------------- DESKTOP SECTION -------------------- */
 .test {
