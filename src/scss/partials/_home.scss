@@ -21,13 +21,45 @@
   &__skills-wrapper{
     width: 100%;
   }
+  &__skills{
+    padding-top: 20px;
+  }
+  &__scale{
+    width: 70%;
+    margin-left: 30%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .scale__year{
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      right: 50%;
+      bottom: -20px;
+      width: 1px;
+      height: 20px;
+      background-color: white;
+    }
+    &:first-child::after{
+      left: 0;
+    }
+    &:last-child:after{
+      right: 0;
+    }
+  }
   .skill__wrapper{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    &:not(:first-child){
+      padding-top: 15px;
+    }
   }
   .skill__bar{
       display: block;
-      width: 100%;
+      margin-right: 0;
+      width: 70%;
       height: 30px;
       border: solid 1px white;
   }

@@ -121,7 +121,7 @@ $heading-font-size: (
   @include desktop{
     max-width: 1140px;
     margin: 0 auto 0 $nav-bar-width;
-    padding-left: side-padding(desktop);
+    padding: 0 side-padding(desktop);
   }
 }
 //mixing for section heading styling

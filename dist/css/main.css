@@ -60,7 +60,7 @@ html, body {
   .inner {
     max-width: 1140px;
     margin: 0 auto 0 250px;
-    padding-left: 25px; } }
+    padding: 0 25px; } }
 
 .img-responsive {
   width: 100%;
@@ -277,7 +277,7 @@ a {
     .header__img {
       max-height: 800px; }
     .header__text {
-      padding-left: 25px;
+      padding: 0 25px;
       text-align: left; }
     .header__heading {
       font-size: 2.7em; }
@@ -383,13 +383,41 @@ a {
 .about__skills-wrapper {
   width: 100%; }
 
+.about__skills {
+  padding-top: 20px; }
+
+.about__scale {
+  width: 70%;
+  margin-left: 30%;
+  display: flex;
+  justify-content: space-between; }
+
+.about .scale__year {
+  position: relative; }
+  .about .scale__year::after {
+    content: '';
+    position: absolute;
+    right: 50%;
+    bottom: -20px;
+    width: 1px;
+    height: 20px;
+    background-color: white; }
+  .about .scale__year:first-child::after {
+    left: 0; }
+  .about .scale__year:last-child:after {
+    right: 0; }
+
 .about .skill__wrapper {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  justify-content: space-between; }
+  .about .skill__wrapper:not(:first-child) {
+    padding-top: 15px; }
 
 .about .skill__bar {
   display: block;
-  width: 100%;
+  margin-right: 0;
+  width: 70%;
   height: 30px;
   border: solid 1px white; }
 

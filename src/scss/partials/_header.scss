@@ -211,7 +211,7 @@
       max-height: 800px;
     }
     &__text{
-      padding-left: side-padding(desktop);
+      padding: 0 side-padding(desktop);
       text-align: left;
     }
     &__heading{
