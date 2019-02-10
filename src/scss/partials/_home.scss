@@ -15,53 +15,30 @@
   &__subheading{
     @include section-subheading;
   }
-  &__tweets-wrapper{
-    width: 100%;
-  }
-  &__skills-wrapper{
-    width: 100%;
+  &__scale{
+    display: flex;
+    justify-content: space-between;
   }
   &__skills{
     padding-top: 20px;
   }
-  &__scale{
-    width: 70%;
-    margin-left: 30%;
-    display: flex;
-    justify-content: space-between;
-  }
   .scale__year{
-    position: relative;
-    &::after{
-      content: '';
-      position: absolute;
-      right: 50%;
-      bottom: -20px;
-      width: 1px;
-      height: 20px;
-      background-color: white;
-    }
-    &:first-child::after{
-      left: 0;
-    }
-    &:last-child:after{
-      right: 0;
-    }
+    @include skill-scale-year;
   }
   .skill__wrapper{
+    @include section-text;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-family: 'Crete Round', serif;
     &:not(:first-child){
       padding-top: 15px;
     }
   }
   .skill__bar{
-      display: block;
-      margin-right: 0;
-      width: 70%;
-      height: 30px;
-      border: solid 1px white;
+    display: block;
+    height: 30px;
+    border: solid 1px white;
   }
 }
 /* ------------------- MOBILE SECTION ------------------- */
@@ -73,11 +50,14 @@
       margin: 0 auto;
       max-width: 280px;
     }
+    &__scale{
+      width: 70%;
+      margin-left: 30%;
+    }
+    .skill__bar{
+      width: 70%;
+    }
   }
-}
-/* ------------------- TABLET SECTION ----------- */
-@media only screen and (min-width: #{$tablet-lower}) and (max-width: #{$tablet-upper}){
-
 }
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
 @media only screen and (min-width: #{$tablet-lower}){
@@ -92,14 +72,16 @@
       padding-right: side-padding(desktop);
     }
     &__more-info{
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 25px;
     }
-  }
-}
-/* ------------------- DESKTOP SECTION -------------------- */
-@media only screen and (min-width: #{$desktop}) {
-  .about{
-
+    &__scale{
+      width: 73%;
+      margin-left: 27%;
+    }
+    .skill__bar{
+      width: 73%;
+    }
   }
 }

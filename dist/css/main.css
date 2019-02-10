@@ -93,6 +93,15 @@ a {
   to {
     opacity: 1; } }
 
+.spacer__img-wrapper {
+  overflow: hidden;
+  height: 400px;
+  padding-top: 50px; }
+
+.spacer__img {
+  -o-object-fit: cover;
+     object-fit: cover; }
+
 /*========================================================================================================*/
 /*============================================== Header ==================================================*/
 /*========================================================================================================*/
@@ -340,7 +349,8 @@ a {
 /*=============================================== ABOUT ==================================================*/
 .about__heading {
   color: #E31D3B;
-  font-family: 'Crete Round', serif; }
+  font-family: 'Crete Round', serif;
+  padding-bottom: 20px; }
   @media only screen and (max-width: 767px) {
     .about__heading {
       font-size: 1.9em;
@@ -353,7 +363,6 @@ a {
       font-size: 2.7em; } }
 
 .about__section {
-  padding-top: 20px;
   line-height: 1.1em; }
   @media only screen and (max-width: 767px) {
     .about__section {
@@ -365,35 +374,27 @@ a {
 
 .about__subheading {
   color: #E31D3B;
-  font-family: 'Crete Round', serif; }
+  font-family: 'Crete Round', serif;
+  padding: 20px 0;
+  font-size: 1.9em; }
   @media only screen and (max-width: 767px) {
     .about__subheading {
-      font-size: 1.5em;
       text-align: center; } }
-  @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    .about__subheading {
-      font-size: 1.9em; } }
   @media only screen and (min-width: 1025px) {
     .about__subheading {
       font-size: 2.2em; } }
 
-.about__tweets-wrapper {
-  width: 100%; }
-
-.about__skills-wrapper {
-  width: 100%; }
+.about__scale {
+  display: flex;
+  justify-content: space-between; }
 
 .about__skills {
   padding-top: 20px; }
 
-.about__scale {
-  width: 70%;
-  margin-left: 30%;
-  display: flex;
-  justify-content: space-between; }
-
 .about .scale__year {
-  position: relative; }
+  font-family: 'Crete Round', serif;
+  position: relative;
+  line-height: 1.1em; }
   .about .scale__year::after {
     content: '';
     position: absolute;
@@ -406,18 +407,33 @@ a {
     left: 0; }
   .about .scale__year:last-child:after {
     right: 0; }
+  @media only screen and (max-width: 767px) {
+    .about .scale__year {
+      font-size: 1em;
+      text-align: center; } }
+  @media only screen and (min-width: 768px) {
+    .about .scale__year {
+      font-size: 1.2em;
+      height: 25px; } }
 
 .about .skill__wrapper {
+  line-height: 1.1em;
   display: flex;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  font-family: 'Crete Round', serif; }
+  @media only screen and (max-width: 767px) {
+    .about .skill__wrapper {
+      font-size: 1em;
+      text-align: center; } }
+  @media only screen and (min-width: 768px) {
+    .about .skill__wrapper {
+      font-size: 1.2em; } }
   .about .skill__wrapper:not(:first-child) {
     padding-top: 15px; }
 
 .about .skill__bar {
   display: block;
-  margin-right: 0;
-  width: 70%;
   height: 30px;
   border: solid 1px white; }
 
@@ -428,9 +444,13 @@ a {
     .about__img-wrapper {
       padding-top: 20px;
       margin: 0 auto;
-      max-width: 280px; } }
+      max-width: 280px; }
+    .about__scale {
+      width: 70%;
+      margin-left: 30%; }
+    .about .skill__bar {
+      width: 70%; } }
 
-/* ------------------- TABLET SECTION ----------- */
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
 @media only screen and (min-width: 768px) {
   .about {
@@ -442,10 +462,15 @@ a {
     .about__description-wrapper {
       padding-right: 25px; }
     .about__more-info {
-      display: flex;
-      justify-content: space-between; } }
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 25px; }
+    .about__scale {
+      width: 73%;
+      margin-left: 27%; }
+    .about .skill__bar {
+      width: 73%; } }
 
-/* ------------------- DESKTOP SECTION -------------------- */
 .test {
   margin-top: 300px;
   text-align: center; }

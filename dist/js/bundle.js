@@ -90,10 +90,11 @@
 /*!*************************!*\
   !*** ./src/js/index.js ***!
   \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("(function () {\r\n\r\n})();\n\n//# sourceURL=webpack:///./src/js/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib_enquire_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/enquire.js */ \"./src/js/lib/enquire.js\");\n/* harmony import */ var _lib_enquire_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_lib_enquire_js__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\n(function () {\r\n\r\n})();\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ }),
 

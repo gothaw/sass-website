@@ -32,6 +32,14 @@ a{
   from {opacity: 0.5}
   to {opacity: 1}
 }
+.spacer__img-wrapper{
+  overflow: hidden;
+  height: 400px;
+  padding-top: 50px;
+}
+.spacer__img{
+  object-fit: cover;
+}
 //============================================= Import Styling ==================================================
 @import 'partials/_header';
 @import 'partials/_footer';
