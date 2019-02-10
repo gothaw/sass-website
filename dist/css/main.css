@@ -446,13 +446,41 @@ a {
   border: solid 1px white;
   position: relative; }
   .about .skill__bar::after {
+    transition: all 0.7s;
     position: absolute;
     right: 0;
     top: 0;
     content: '';
+    width: 0;
     height: 100%;
-    background-color: blue;
-    width: 66.66667%; }
+    background-color: #E31D3B; }
+
+.about .skill__bar-1::after {
+  width: 100%; }
+
+.about .skill__bar-2::after {
+  width: 100%; }
+
+.about .skill__bar-3::after {
+  width: 83.333%; }
+
+.about .skill__bar-4::after {
+  width: 50%; }
+
+.about .skill__bar-5::after {
+  width: 33.333%; }
+
+.about .skill__bar-6::after {
+  width: 33.333%; }
+
+.about .skill__bar-7::after {
+  width: 66.667%; }
+
+.about .skill__bar-8::after {
+  width: 66.667%; }
+
+.about .skill__bar-9::after {
+  width: 33.333%; }
 
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: 767px) {

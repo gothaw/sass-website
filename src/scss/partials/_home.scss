@@ -38,16 +38,22 @@
   .skill__bar{
     display: block;
     height: 30px;
-    border: solid 1px white;
+    border: solid 1px color(font);
     position: relative;
     &::after{
+      transition: all duration(slow);
       position: absolute;
       right: 0;
       top: 0;
       content: '';
+      width: 0;
       height: 100%;
-      background-color: blue;
-      width: 66.66667%;
+      background-color: color(main);
+    }
+  }
+  @for $i from 1 through 9{
+    .skill__bar-#{$i}::after{
+      width: nth($skill-progress,$i);
     }
   }
 }
