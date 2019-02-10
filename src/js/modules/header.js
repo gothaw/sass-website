@@ -6,16 +6,58 @@ import enquire from '../lib/enquire.js'
     const $menuLogo                 = $('.menu__logo');
     const $menuItems                = $('.menu__item');
     const $toggleMenuIconImg        = $('.toggle__img');
-    const $textCursor               = $('.header__typing-animation');
+
+    //variables
+    const typingSpace               = document.querySelector('.header__typing-animation');
 
     let toggleMenuActive = false;
+    let typedText = ["Frontend.","Node.js.","JavaScript.","MySQL.","Python."];
 
-    function typingAnimation() {
+
+    /**
+     * @name        typingAnimation
+     * @desc        Function handles typing animation by invoking textTypingInterval function and separate setInterval to animate text cursor.
+     * @param       duration - duration of the typing animation [ms] including the time after a string is typed and a new animation is about to start.
+     *              Needs to be greater than typingDuration. Default value = 2500ms.
+     */
+    function typingAnimation(duration=2500) {
+        let i=0;
         setInterval(function () {
-            $textCursor.toggleClass('header__typing-animation--active')
-        },500)
+            $(typingSpace).toggleClass('header__typing-animation--active')
+        },400);
+        textTypingInterval(i);
+        setInterval(function () {
+            i++;
+            if(i>=typedText.length){
+                i=0;
+            }
+            textTypingInterval(i);
+        },duration);
     }
-    
+
+    /**
+     * @name        textTypingInterval
+     * @desc        Function animates the string from typedText array using setInterval.
+     *              It changes innerHTML of the typingSpace by adding subsequent characters at each interval step.
+     *              When typing animation is completed the interval is cleared.
+     * @param       index - index of the string from typedText array
+     * @param       typingDuration - duration of typing animation [ms] needs to be less than duration in typingAnimation function.
+     *              Default value = 800ms
+     */
+    function textTypingInterval(index,typingDuration=800) {
+        let j=0;
+        typingSpace.innerHTML="";
+        const interval = setInterval(function () {
+           if(j<typedText[index].length){
+               typingSpace.innerHTML+=typedText[index].charAt(j);
+               j++;
+           }
+           else {
+               clearInterval(interval);
+           }
+       },typingDuration/typedText[index].length);
+    }
+
     /**
      * @name        registerMenu
      * @desc        Function hides the menu bar links when width is less than 767px and shows when it is greater than 767px.

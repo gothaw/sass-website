@@ -50,6 +50,10 @@ $heading-font-size: (
   small: 1.9em,
   v-small: 1.5em
 );
+//skill bars colors and progress
+$skill-colors: (#E54C21,#1572B7,#F7E018,#DD0031,#3F7CAD,#14845B,#3E863D,#E58F00,#3E863D);
+$skill-progress: (100%,100%,75%,50%,25%,25%,75%,75%,25%);
+
 //======================================================================================================
 //============================================ Functions ===============================================
 //======================================================================================================
@@ -189,8 +193,11 @@ $heading-font-size: (
 //=============================================== Home =================================================
 //============================================== About =================================================
 @mixin skill-scale-year{
+  @debug "skill bar scale designed for 4 year labels";
   font-family: 'Crete Round', serif;
   position: relative;
+  text-align: center;
+  width: 33%;
   &::after{
     content: '';
     position: absolute;
@@ -200,11 +207,20 @@ $heading-font-size: (
     height: 20px;
     background-color: white;
   }
+  &:first-child{
+    text-align: left;
+  }
   &:first-child::after{
     left: 0;
   }
+  &:last-child{
+    text-align: right;
+  }
   &:last-child:after{
     right: 0;
+  }
+  &:first-child, &:last-child{
+    width: 17%;
   }
   line-height: 1.1em;
   @include mobile{
@@ -215,4 +231,7 @@ $heading-font-size: (
     font-size: div-font-size(medium);
     height: 25px;
   }
+}
+@mixin skill-bar{
+
 }
