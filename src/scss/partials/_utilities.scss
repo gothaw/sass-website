@@ -189,7 +189,29 @@ $skill-progress: (100%,100%,83.333%,50%,33.333%,33.333%,66.667%,66.667%,33.333%)
     }
   }
 }
-//=============================================== Home =================================================
+//============================================== Home ==================================================
+//============================================= Spacer =================================================
+@mixin spacer-text{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 55%;
+  transform: translateY(-50%);
+  text-shadow: 1px 1px color(background);
+  @include mobile{
+    font-size: heading-font-size(small);
+    padding: 0 side-padding(mobile);
+  }
+  @include tablet{
+    font-size: heading-font-size(medium);
+    padding: 0 side-padding(tablet);
+  }
+  @include desktop{
+    top: 50%;
+    font-size: heading-font-size(large);
+    padding: 0 side-padding(desktop);
+  }
+}
 //============================================== About =================================================
 @mixin skill-scale-year{
   @debug "skill bar scale designed for 4 year labels";
@@ -230,7 +252,4 @@ $skill-progress: (100%,100%,83.333%,50%,33.333%,33.333%,66.667%,66.667%,33.333%)
     font-size: div-font-size(medium);
     height: 25px;
   }
-}
-@mixin skill-bar{
-
 }

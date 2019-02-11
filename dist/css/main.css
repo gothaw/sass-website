@@ -93,15 +93,6 @@ a {
   to {
     opacity: 1; } }
 
-.spacer__img-wrapper {
-  overflow: hidden;
-  height: 400px;
-  padding-top: 50px; }
-
-.spacer__img {
-  -o-object-fit: cover;
-     object-fit: cover; }
-
 /*========================================================================================================*/
 /*============================================== Header ==================================================*/
 /*========================================================================================================*/
@@ -346,6 +337,54 @@ a {
 /*========================================================================================================*/
 /*================================================ HOME ==================================================*/
 /*========================================================================================================*/
+/*=============================================== SPACER =================================================*/
+.spacer {
+  padding-top: 60px;
+  font-family: 'Crete Round', serif;
+  position: relative;
+  text-align: center; }
+  .spacer__img {
+    -o-object-fit: cover;
+       object-fit: cover; }
+  .spacer__text {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 55%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    text-shadow: 1px 1px black; }
+    @media only screen and (max-width: 767px) {
+      .spacer__text {
+        font-size: 1.9em;
+        padding: 0 20px; } }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      .spacer__text {
+        font-size: 2.2em;
+        padding: 0 30px; } }
+    @media only screen and (min-width: 1025px) {
+      .spacer__text {
+        top: 50%;
+        font-size: 2.7em;
+        padding: 0 25px; } }
+
+/* ------------------- MOBILE SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .spacer__img {
+    height: 300px; } }
+
+/* ------------------- TABLET SECTION ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .spacer__img {
+    height: 450px; } }
+
+/* ------------------- DESKTOP SECTION -------------------- */
+@media only screen and (min-width: 1025px) {
+  .spacer {
+    margin-left: 250px; }
+    .spacer__img {
+      height: 600px; } }
+
 /*=============================================== ABOUT ==================================================*/
 .about__heading {
   color: #E31D3B;

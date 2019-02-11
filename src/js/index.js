@@ -3,7 +3,6 @@ import enquire from './lib/enquire.js'
 (function () {
     //jQuery variables
     const $aboutImg         = $('.about__img');
-    const $skillBars        = $('.skill__bar');
 
     //variables
     const skills            = document.getElementById('skills');
