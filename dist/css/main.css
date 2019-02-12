@@ -339,13 +339,19 @@ a {
 /*========================================================================================================*/
 /*=============================================== SPACER =================================================*/
 .spacer {
-  padding-top: 60px;
+  margin-top: 60px;
   font-family: 'Crete Round', serif;
   position: relative;
-  text-align: center; }
+  text-align: center;
+  overflow: hidden; }
   .spacer__img {
-    -o-object-fit: cover;
-       object-fit: cover; }
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    pointer-events: none; }
   .spacer__text {
     position: absolute;
     width: 100%;
@@ -370,20 +376,19 @@ a {
 
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: 767px) {
-  .spacer__img {
+  .spacer {
     height: 300px; } }
 
 /* ------------------- TABLET SECTION ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .spacer__img {
+  .spacer {
     height: 450px; } }
 
 /* ------------------- DESKTOP SECTION -------------------- */
 @media only screen and (min-width: 1025px) {
   .spacer {
-    margin-left: 250px; }
-    .spacer__img {
-      height: 600px; } }
+    margin-left: 250px;
+    height: 600px; } }
 
 /*=============================================== ABOUT ==================================================*/
 .about__heading {

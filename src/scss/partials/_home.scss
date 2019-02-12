@@ -6,12 +6,18 @@
 
 /*=============================================== SPACER =================================================*/
 .spacer{
-  padding-top: vertical-padding(large);
+  margin-top: vertical-padding(large);
   font-family: 'Crete Round', serif;
   position: relative;
   text-align: center;
+  overflow: hidden;
   &__img{
-    object-fit: cover;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    pointer-events: none
   }
   &__text{
     @include spacer-text;
@@ -20,26 +26,20 @@
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: #{$mobile}) {
   .spacer{
-    &__img{
-      height: 300px;
-    }
+    height: 300px;
   }
 }
 /* ------------------- TABLET SECTION ----------- */
 @media only screen and (min-width: #{$tablet-lower}) and (max-width: #{$tablet-upper}){
   .spacer{
-    &__img{
-      height: 450px;
-    }
+    height: 450px;
   }
 }
 /* ------------------- DESKTOP SECTION -------------------- */
 @media only screen and (min-width: #{$desktop}) {
   .spacer{
     margin-left: $nav-bar-width;
-    &__img{
-      height: 600px;
-    }
+    height: 600px;
   }
 }
 /*=============================================== ABOUT ==================================================*/

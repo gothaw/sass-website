@@ -2,11 +2,40 @@ import enquire from './lib/enquire.js'
 
 (function () {
     //jQuery variables
-    const $aboutImg         = $('.about__img');
+    const $aboutImg           = $('.about__img');
+    const $spacerImg          = $('.spacer__img');
+    const $spacerImgWrapper   = $('.spacer');
 
     //variables
-    const skills            = document.getElementById('skills');
-    const skillBars         = document.querySelectorAll('.skill__bar');
+    const skills              = document.getElementById('skills');
+    const skillBars           = document.querySelectorAll('.skill__bar');
+
+    /**
+     *
+     */
+    function spacerImgParallax(speed) {
+        const imgY = $spacerImgWrapper.offset().top;
+        const winY = $(window).scrollTop();
+        const winH = $(window).height();
+        const wrapperH = $spacerImgWrapper.innerHeight();
+        const winBottom = winY + winH;
+
+        let imgPercent;
+
+        // If block is shown on screen
+        if (winBottom > imgY && winY < imgY + wrapperH) {
+            // Number of pixels shown after block appear
+            const imgBottom = ((winBottom - imgY) * speed);
+            // Max number of pixels until block disappear
+            const imgTop = winH + wrapperH;
+            // Porcentage between start showing until disappearing
+            imgPercent = ((imgBottom / imgTop) * 100) + (50 - (speed * 50));
+        }
+        $spacerImg.css({
+            top: imgPercent + '%',
+            transform: 'translate(-50%, -' + imgPercent + '%)'
+        });
+    }
 
     /**
      * @name        animateSkillBars
@@ -40,6 +69,9 @@ import enquire from './lib/enquire.js'
         });
     }
     function eventHandler() {
+        document.addEventListener("scroll",function () {
+            spacerImgParallax(0.75)
+        });
     }
 
     function init() {
