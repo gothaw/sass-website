@@ -9,31 +9,44 @@ import enquire from './lib/enquire.js'
     //variables
     const skills              = document.getElementById('skills');
     const skillBars           = document.querySelectorAll('.skill__bar');
+    let imgPercent;
+    let parllaxInterval;
 
     /**
      *
      */
     function spacerImgParallax(speed) {
-        const imgY = $spacerImgWrapper.offset().top;
-        const winY = $(window).scrollTop();
-        const winH = $(window).height();
-        const wrapperH = $spacerImgWrapper.innerHeight();
-        const winBottom = winY + winH;
+        enquire.register("screen and (min-width: 1025px)", {
+            match: function () {
+                parllaxInterval = setInterval(function () {
+                    const imgY = $spacerImgWrapper.offset().top;
+                    const winY = $(window).scrollTop();
+                    const winH = $(window).height();
+                    const wrapperH = $spacerImgWrapper.innerHeight();
+                    const winBottom = winY + winH;
 
-        let imgPercent;
-
-        // If block is shown on screen
-        if (winBottom > imgY && winY < imgY + wrapperH) {
-            // Number of pixels shown after block appear
-            const imgBottom = ((winBottom - imgY) * speed);
-            // Max number of pixels until block disappear
-            const imgTop = winH + wrapperH;
-            // Porcentage between start showing until disappearing
-            imgPercent = ((imgBottom / imgTop) * 100) + (50 - (speed * 50));
-        }
-        $spacerImg.css({
-            top: imgPercent + '%',
-            transform: 'translate(-50%, -' + imgPercent + '%)'
+                    // If block is shown on screen
+                    if (winBottom > imgY && winY < imgY + wrapperH) {
+                        // Number of pixels shown after block appear
+                        const imgBottom = ((winBottom - imgY) * speed);
+                        // Max number of pixels until block disappear
+                        const imgTop = winH + wrapperH;
+                        // Percentage between start showing until disappearing
+                        imgPercent = ((imgBottom / imgTop) * 100) + (50 - (speed * 50));
+                    }
+                    $spacerImg.css({
+                        top: imgPercent + '%',
+                        transform: 'translate(-50%, -' + imgPercent + '%)'
+                    });
+                },1000/60);
+            },
+            unmatch: function () {
+                $spacerImg.css({
+                    top: '0',
+                    transform: 'translate(-50%, 0)'
+                });
+                clearInterval(parllaxInterval);
+            }
         });
     }
 
@@ -69,15 +82,14 @@ import enquire from './lib/enquire.js'
         });
     }
     function eventHandler() {
-        document.addEventListener("scroll",function () {
-            spacerImgParallax(0.75)
-        });
+
     }
 
     function init() {
         eventHandler();
         responsiveAboutImg();
         animateSkillBars();
+        spacerImgParallax(0.75);
     }
 
     window.addEventListener("load", init);
