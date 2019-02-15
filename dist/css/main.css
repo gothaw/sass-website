@@ -349,9 +349,9 @@ a {
     z-index: -1;
     position: absolute;
     top: 0;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
+    left: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
     pointer-events: none; }
   .spacer__text {
     position: absolute;
@@ -389,7 +389,7 @@ a {
 @media only screen and (min-width: 1025px) {
   .spacer {
     margin-left: 250px;
-    height: 600px; } }
+    height: 550px; } }
 
 /*=============================================== ABOUT ==================================================*/
 .about__heading {

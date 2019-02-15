@@ -16,8 +16,8 @@
     z-index: -1;
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translate(-50%,0);
+    left: 0;
+    transform: translateY(0);
     pointer-events: none
   }
   &__text{
@@ -40,7 +40,7 @@
 @media only screen and (min-width: #{$desktop}) {
   .spacer{
     margin-left: $nav-bar-width;
-    height: 600px;
+    height: 550px;
   }
 }
 /*=============================================== ABOUT ==================================================*/
