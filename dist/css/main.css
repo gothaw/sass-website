@@ -342,12 +342,12 @@ a {
   margin-top: 60px;
   font-family: 'Crete Round', serif;
   position: relative;
+  height: 100%;
   text-align: center;
   overflow: hidden; }
   .spacer__img {
     z-index: -1;
-    position: -webkit-sticky;
-    position: sticky;
+    position: absolute;
     top: 0;
     left: 50%;
     -webkit-transform: translate(-50%, 0);
@@ -357,7 +357,7 @@ a {
     position: absolute;
     width: 100%;
     left: 0;
-    top: 55%;
+    top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     text-shadow: 1px 1px black; }

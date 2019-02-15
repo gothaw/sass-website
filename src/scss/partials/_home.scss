@@ -9,11 +9,12 @@
   margin-top: vertical-padding(large);
   font-family: 'Crete Round', serif;
   position: relative;
+  height: 100%;
   text-align: center;
   overflow: hidden;
   &__img{
     z-index: -1;
-    position: sticky;
+    position: absolute;
     top: 0;
     left: 50%;
     transform: translate(-50%,0);

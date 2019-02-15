@@ -3,49 +3,49 @@ import enquire from './lib/enquire.js'
 (function () {
     //jQuery variables
     const $aboutImg           = $('.about__img');
-    const $spacerImg          = $('.spacer__img');
-    const $spacerImgWrapper   = $('.spacer');
+
 
     //variables
     const skills              = document.getElementById('skills');
     const skillBars           = document.querySelectorAll('.skill__bar');
     let imgPercent;
-    let parllaxInterval;
+    let parallaxInterval;
 
     /**
      *
      */
-    function spacerImgParallax(speed) {
+    function spacerImgParallax(speed,$img,$wrapper) {
         enquire.register("screen and (min-width: 1025px)", {
             match: function () {
-                parllaxInterval = setInterval(function () {
-                    const imgY = $spacerImgWrapper.offset().top;
-                    const winY = $(window).scrollTop();
-                    const winH = $(window).height();
-                    const wrapperH = $spacerImgWrapper.innerHeight();
-                    const winBottom = winY + winH;
+                parallaxInterval = setInterval(function () {
+                    const winTop        = $(this).scrollTop();
+                    const winH          = $(this).height();
+                    const winBottom     = winTop + winH;
+                    const wrapperTop    = $wrapper.offset().top;
+                    const wrapperH      = $wrapper.height();
+                    const wrapperBottom = wrapperTop + wrapperH;
 
                     // If block is shown on screen
-                    if (winBottom > imgY && winY < imgY + wrapperH) {
+                    if (winBottom > wrapperTop && winTop < wrapperBottom) {
                         // Number of pixels shown after block appear
-                        const imgBottom = ((winBottom - imgY) * speed);
+                        const imgBottom = ((winBottom - wrapperTop) * speed);
                         // Max number of pixels until block disappear
                         const imgTop = winH + wrapperH;
                         // Percentage between start showing until disappearing
                         imgPercent = ((imgBottom / imgTop) * 100) + (50 - (speed * 50));
                     }
-                    $spacerImg.css({
+                    $img.css({
                         top: imgPercent + '%',
                         transform: 'translate(-50%, -' + imgPercent + '%)'
                     });
-                },1000/60);
+                },1000/120);
             },
             unmatch: function () {
-                $spacerImg.css({
+                $img.css({
                     top: '0',
                     transform: 'translate(-50%, 0)'
                 });
-                clearInterval(parllaxInterval);
+                clearInterval(parallaxInterval);
             }
         });
     }
@@ -82,14 +82,18 @@ import enquire from './lib/enquire.js'
         });
     }
     function eventHandler() {
-
+        $('.spacer__img').each(function () {
+            const $spacerImg          = $(this);
+            const $spacerImgWrapper   = $(this).parent();
+            spacerImgParallax(0.75,$spacerImg,$spacerImgWrapper);
+        });
     }
 
     function init() {
         eventHandler();
         responsiveAboutImg();
         animateSkillBars();
-        spacerImgParallax(0.75);
+        // spacerImgParallax(0.75);
     }
 
     window.addEventListener("load", init);

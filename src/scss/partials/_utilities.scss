@@ -195,7 +195,7 @@ $skill-progress: (100%,100%,83.333%,50%,33.333%,33.333%,66.667%,66.667%,33.333%)
   position: absolute;
   width: 100%;
   left: 0;
-  top: 55%;
+  top: 50%;
   transform: translateY(-50%);
   text-shadow: 1px 1px color(background);
   @include mobile{
