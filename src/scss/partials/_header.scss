@@ -179,6 +179,9 @@
     background-size: cover;
     background-position: bottom right;
     &__logo{
+      width: 100%;
+      height: auto;
+      display: block;
       padding: 20px 60px;
     }
     &__item{

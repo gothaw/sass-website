@@ -3,7 +3,6 @@ import enquire from '../lib/enquire.js'
 (function () {
 
     //jQuery variables
-    const $menuLogo                 = $('.menu__logo');
     const $menuItems                = $('.menu__item');
     const $toggleMenuIconImg        = $('.toggle__img');
 
@@ -11,7 +10,7 @@ import enquire from '../lib/enquire.js'
     const typingSpace               = document.querySelector('.header__typing-animation');
 
     let toggleMenuActive = false;
-    let typedText = ["Frontend.","Node.js.","JavaScript.","MySQL.","Python."];
+    let typedText = ["Front-end.","Node.js.","JavaScript.","MySQL.","Python."];
 
 
     /**
@@ -92,29 +91,12 @@ import enquire from '../lib/enquire.js'
         }
     }
 
-    /**
-     * @name        responsiveLogo
-     * @desc        Function adds img-responsive class to the image if screen width is greater than 1025px.
-     *              Uses enquire.js.
-     */
-    function responsiveLogo() {
-        enquire.register("screen and (min-width: 1025px)", {
-            match: function () {
-                $menuLogo.addClass("img-responsive");
-            },
-            unmatch: function () {
-                $menuLogo.removeClass("img-responsive");
-            }
-        });
-    }
-
     function eventHandler() {
         $toggleMenuIconImg.on('click',toggleMenu);
     }
 
     function init() {
         eventHandler();
-        responsiveLogo();
         registerMenu();
         typingAnimation();
     }

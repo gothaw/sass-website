@@ -255,6 +255,9 @@ a {
     background-size: cover;
     background-position: bottom right; }
     .menu__logo {
+      width: 100%;
+      height: auto;
+      display: block;
       padding: 20px 60px; }
     .menu__item {
       border-top: solid 1px rgba(55, 55, 55, 0.5); }
@@ -531,6 +534,10 @@ a {
 @media only screen and (max-width: 767px) {
   .about {
     padding-top: 20px; }
+    .about__img {
+      width: 100%;
+      height: auto;
+      display: block; }
     .about__img-wrapper {
       padding-top: 20px;
       margin: 0 auto;
@@ -560,6 +567,152 @@ a {
       margin-left: 27%; }
     .about .skill__bar {
       width: 73%; } }
+
+/*=========================================== SERVICES =================================================*/
+.services__heading {
+  color: #E31D3B;
+  font-family: 'Crete Round', serif;
+  padding-bottom: 20px; }
+  @media only screen and (max-width: 767px) {
+    .services__heading {
+      font-size: 1.9em;
+      text-align: center; } }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .services__heading {
+      font-size: 2.2em; } }
+  @media only screen and (min-width: 1025px) {
+    .services__heading {
+      font-size: 2.7em; } }
+
+.services__section {
+  line-height: 1.1em; }
+  @media only screen and (max-width: 767px) {
+    .services__section {
+      font-size: 1em;
+      text-align: center; } }
+  @media only screen and (min-width: 768px) {
+    .services__section {
+      font-size: 1.2em; } }
+
+.services__cards-wrapper {
+  display: grid;
+  padding-top: 20px; }
+
+.services__card {
+  color: black;
+  padding: 15px;
+  text-align: center; }
+
+.services__card:nth-child(0) {
+  background-color: #b3b3b3; }
+
+.services__card:nth-child(1) {
+  background-color: #e6e6e6; }
+
+.services__card:nth-child(2) {
+  background-color: #b3b3b3; }
+
+.services__card:nth-child(3) {
+  background-color: #e6e6e6; }
+
+.services__card:nth-child(4) {
+  background-color: #b3b3b3; }
+
+.services__card:nth-child(5) {
+  background-color: #e6e6e6; }
+
+.services__card:nth-child(6) {
+  background-color: #b3b3b3; }
+
+.services__card:nth-child(7) {
+  background-color: #e6e6e6; }
+
+.services .card__heading {
+  color: #E31D3B;
+  font-family: 'Crete Round', serif; }
+
+.services .card__description {
+  line-height: 1.1em; }
+  @media only screen and (max-width: 767px) {
+    .services .card__description {
+      font-size: 1em;
+      text-align: center; } }
+  @media only screen and (min-width: 768px) {
+    .services .card__description {
+      font-size: 1.2em; } }
+
+.services .card__img {
+  padding: 15px 0; }
+
+/* ------------------- MOBILE SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .services {
+    padding-top: 20px; }
+    .services__cards-wrapper {
+      grid-template-columns: repeat(2, 1fr); }
+    .services .card__heading {
+      font-size: 1.2em; }
+    .services .card__img {
+      max-width: 120px;
+      width: 100%;
+      height: auto; } }
+
+/* --------------- TABLET AND DESKTOP SECTION -------------- */
+@media only screen and (min-width: 768px) {
+  .services {
+    padding-top: 30px; }
+    .services__cards-wrapper {
+      grid-template-columns: repeat(3, 1fr); }
+    .services .card__heading {
+      font-size: 1.5em; } }
+
+/*=========================================== PORTFOLIO =================================================*/
+.portfolio__heading {
+  color: #E31D3B;
+  font-family: 'Crete Round', serif;
+  padding-bottom: 20px; }
+  @media only screen and (max-width: 767px) {
+    .portfolio__heading {
+      font-size: 1.9em;
+      text-align: center; } }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .portfolio__heading {
+      font-size: 2.2em; } }
+  @media only screen and (min-width: 1025px) {
+    .portfolio__heading {
+      font-size: 2.7em; } }
+
+.portfolio__section {
+  line-height: 1.1em; }
+  @media only screen and (max-width: 767px) {
+    .portfolio__section {
+      font-size: 1em;
+      text-align: center; } }
+  @media only screen and (min-width: 768px) {
+    .portfolio__section {
+      font-size: 1.2em; } }
+
+.portfolio__subheading {
+  color: #E31D3B;
+  font-family: 'Crete Round', serif;
+  padding: 20px 0;
+  font-size: 1.9em; }
+  @media only screen and (max-width: 767px) {
+    .portfolio__subheading {
+      text-align: center; } }
+  @media only screen and (min-width: 1025px) {
+    .portfolio__subheading {
+      font-size: 2.2em; } }
+
+/* ------------------- MOBILE SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .portfolio {
+    padding-top: 20px; } }
+
+/* --------------- TABLET AND DESKTOP SECTION -------------- */
+@media only screen and (min-width: 768px) {
+  .portfolio {
+    padding-top: 30px; } }
 
 .test {
   margin-top: 300px;

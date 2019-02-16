@@ -100,6 +100,11 @@
 @media only screen and (max-width: #{$mobile}) {
   .about{
     padding-top: vertical-padding(small);
+    &__img{
+      width: 100%;
+      height: auto;
+      display: block;
+    }
     &__img-wrapper{
       padding-top: vertical-padding(small);
       margin: 0 auto;
@@ -140,4 +145,94 @@
     }
   }
 }
+/*=========================================== SERVICES =================================================*/
+.services{
+  &__heading{
+    @include section-heading;
+  }
+  &__section{
+    @include section-text;
+  }
+  &__cards-wrapper{
+    display: grid;
+    padding-top: vertical-padding(small);
+  }
+  &__card{
+    color: black;
+    padding: 15px;
+    text-align: center;
+  }
+  @for $i from 0 through 3{
+    &__card:nth-child(#{2*$i}){
+      background-color: darken(white,30%);
+    }
+    &__card:nth-child(#{2*$i+1}){
+      background-color: darken(white,10%);
+    }
+  }
+  .card__heading{
+    color: color(main);
+    font-family: 'Crete Round', serif;
+  }
+  .card__description{
+    @include section-text;
+  }
+  .card__img{
+    padding: 15px 0;
+  }
+}
+/* ------------------- MOBILE SECTION ------------------- */
+@media only screen and (max-width: #{$mobile}) {
+  .services{
+    padding-top: vertical-padding(small);
+    &__cards-wrapper{
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .card__heading{
+      font-size: div-font-size(medium);
+    }
+    .card__img{
+      max-width: 120px;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+/* --------------- TABLET AND DESKTOP SECTION -------------- */
+@media only screen and (min-width: #{$tablet-lower}){
+  .services{
+    padding-top: vertical-padding(medium);
+    &__cards-wrapper{
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .card__heading{
+      font-size: div-font-size(large);
+    }
+  }
+}
+/*=========================================== PORTFOLIO =================================================*/
+.portfolio{
+  &__heading{
+    @include section-heading;
+  }
+  &__section{
+    @include section-text;
+  }
+  &__subheading{
+    @include section-subheading;
+  }
+}
+/* ------------------- MOBILE SECTION ------------------- */
+@media only screen and (max-width: #{$mobile}) {
+  .portfolio{
+    padding-top: vertical-padding(small);
 
+  }
+}
+/* --------------- TABLET AND DESKTOP SECTION -------------- */
+@media only screen and (min-width: #{$tablet-lower}){
+  .portfolio{
+    padding-top: vertical-padding(medium);
+
+  }
+}

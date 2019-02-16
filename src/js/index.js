@@ -2,7 +2,6 @@ import enquire from './lib/enquire.js'
 
 (function () {
     //jQuery variables
-    const $aboutImg           = $('.about__img');
     const $spacerImg          = $('.spacer__img');
 
     //variables
@@ -13,6 +12,7 @@ import enquire from './lib/enquire.js'
      * @name        spacerImgParallax
      * @desc        Function handles parallax effect for spacer images. It uses setInterval which updates the top and transform: translateY properties of the image.
      *              The parallax effect is displayed only for window width greater than 1025px using enquire.js. For window width less than 1025px, the image properties are restored to default values.
+     *              Parallax function based on: https://codepen.io/RenanB/pen/GZeBNg by Renan Breno
      * @param       speed - speed of the parallax effect (between 0 and 1)
      * @param       $img - jQuery array like object of spacer images
      * @param       $wrapper - jQuery array like object of spacer image wrappers
@@ -81,22 +81,6 @@ import enquire from './lib/enquire.js'
         });
     }
 
-    /**
-     * @name        responsiveAboutImg
-     * @desc        Function adds img-responsive class to the image if screen width is less than 768px.
-     *              Uses enquire.js.
-     */
-    function responsiveAboutImg() {
-        enquire.register("screen and (max-width: 768px)", {
-            match: function () {
-                $aboutImg.addClass("img-responsive");
-            },
-            unmatch: function () {
-                $aboutImg.removeClass("img-responsive");
-            }
-        });
-    }
-
     function eventHandler() {
         $('.spacer__img').each(function () {
             const $spacerImg          = $(this);
@@ -107,7 +91,6 @@ import enquire from './lib/enquire.js'
 
     function init() {
         eventHandler();
-        responsiveAboutImg();
         responsiveSpacerImg();
         animateSkillBars();
     }
