@@ -2,7 +2,10 @@ import enquire from './lib/enquire.js'
 
 (function () {
     //jQuery variables
-    const $spacerImg          = $('.spacer__img');
+    const $spacerImg            = $('.spacer__img');
+    const $projectImg           = $('.project__img');
+    const $projectOverlay       = $('.project__overlay');
+    const $projectButton        = $('.project__button');
 
     //variables
     const skills              = document.getElementById('skills');
@@ -50,6 +53,22 @@ import enquire from './lib/enquire.js'
     }
 
     /**
+     * @name        responsiveSpacerImg
+     * @desc        Function adds img-responsive class to the image if screen width is greater than 540px.
+     *              Uses enquire.js.
+     */
+    function responsiveSpacerImg() {
+        enquire.register("screen and (min-width: 540px)", {
+            match: function () {
+                $spacerImg.addClass("img-responsive");
+            },
+            unmatch: function () {
+                $spacerImg.removeClass("img-responsive");
+            }
+        });
+    }
+
+    /**
      * @name        animateSkillBars
      * @desc        Function checks if skill bars are visible in the viewport.
      *              If they are visible, a CSS class is added which adds their width - animates them.
@@ -66,26 +85,46 @@ import enquire from './lib/enquire.js'
     }
 
     /**
-     * @name        responsiveSpacerImg
-     * @desc        Function adds img-responsive class to the image if screen width is greater than 540px.
-     *              Uses enquire.js.
+     *
+     * @param e
      */
-    function responsiveSpacerImg() {
-        enquire.register("screen and (min-width: 540px)", {
-            match: function () {
-                $spacerImg.addClass("img-responsive");
-            },
-            unmatch: function () {
-                $spacerImg.removeClass("img-responsive");
-            }
-        });
+    function showProjectDescription(e) {
+        const $targetImage          = $(e.target);
+        const $targetProject        = $targetImage.closest('.portfolio__project');
+        const $targetOverlay        = $targetProject.find('.project__overlay');
+        $projectOverlay.not($targetOverlay).slideUp(600);
+        $targetOverlay.slideDown(400);
     }
 
+    /**
+     *
+     * @param e
+     */
+    function hideProjectDescription(e) {
+        const $target               = $(e.target);
+        const $targetOverlay        = $target.closest('.project__overlay');
+        $targetOverlay.slideUp(600);
+    }
+
+    function showProjectLightBox(e) {
+        e.stopPropagation();
+        console.log("1");
+    }
+    
     function eventHandler() {
         $('.spacer__img').each(function () {
             const $spacerImg          = $(this);
             const $spacerImgWrapper   = $(this).parent();
             spacerImgParallax(0.4,$spacerImg,$spacerImgWrapper);
+        });
+        $projectButton.on('click',function (e) {
+            showProjectLightBox(e);
+        });
+        $projectImg.on('click',function (e) {
+            showProjectDescription(e);
+        });
+        $projectOverlay.on('click',function (e) {
+            hideProjectDescription(e);
         });
     }
 
