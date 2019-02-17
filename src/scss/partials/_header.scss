@@ -48,7 +48,7 @@
     line-height: 1.1em;
   }
   &__subheading{
-    padding-top: 10px;
+    padding: 10px 0 35px;
   }
   &__typing-animation--active{
     @include typing-animation;

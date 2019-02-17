@@ -6,7 +6,7 @@
 
 /*=============================================== SPACER =================================================*/
 .spacer{
-  margin-top: vertical-padding(large);
+  margin-top: vertical-padding(medium);
   font-family: 'Crete Round', serif;
   position: relative;
   height: 100%;
@@ -221,18 +221,60 @@
   &__subheading{
     @include section-subheading;
   }
+  &__project{
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
 }
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: #{$mobile}) {
   .portfolio{
     padding-top: vertical-padding(small);
-
+    &__projects-wrapper{
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    &__project:not(:first-child){
+      margin-top: vertical-padding(small);
+    }
   }
 }
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
 @media only screen and (min-width: #{$tablet-lower}){
   .portfolio{
     padding-top: vertical-padding(medium);
-
+    &__projects-wrapper{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+    }
+    .project__img{
+      object-fit: cover;
+      height: 100%;
+    }
+    @for $i from 1 through 3{
+      @if $i != 2{
+        &__project:nth-child(#{$i}){
+          grid-row: 1 / span 3;
+        }
+      }
+      @else{
+        &__project:nth-child(#{$i}){
+          grid-row: 1 / span 2;
+        }
+      }
+    }
+    @for $i from 4 through 6{
+      @if $i != 5{
+        &__project:nth-child(#{$i}){
+          grid-row: 4 / span 3;
+        }
+      }
+      @else{
+        &__project:nth-child(#{$i}){
+          grid-row: 3 / span 2;
+        }
+      }
+    }
   }
 }

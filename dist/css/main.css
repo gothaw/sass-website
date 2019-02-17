@@ -137,7 +137,7 @@ a {
   line-height: 1.1em; }
 
 .header__subheading {
-  padding-top: 10px; }
+  padding: 10px 0 35px; }
 
 .header__typing-animation--active {
   position: relative; }
@@ -290,21 +290,68 @@ a {
 /*========================================================================================================*/
 /*========================================== Read More Button ============================================*/
 /*========================================================================================================*/
-.button-read-more {
-  font-weight: bold; }
-  .button-read-more__link {
+/*========================================== Styling ============================================*/
+.button-portfolio__link {
+  display: block;
+  max-width: 260px;
+  text-align: center;
+  border: solid #E31D3B 3px;
+  color: #E31D3B;
+  font-family: 'Crete Round', serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 30px auto 0;
+  padding: 10px 30px;
+  position: relative;
+  text-transform: uppercase; }
+  .button-portfolio__link:hover {
+    color: white; }
+  .button-portfolio__link:active {
+    border: solid #E31D3B 3px;
+    color: white !important;
+    text-shadow: none !important; }
+  .button-portfolio__link::before {
+    background: #E31D3B;
+    content: '';
+    width: 100%;
+    position: absolute;
+    transition: all 0.3s;
+    bottom: -1%;
+    left: 0;
+    height: 0;
+    z-index: -1; }
+  .button-portfolio__link:hover::before {
+    height: 102%; }
+  .button-portfolio__link:active::before {
+    background: transparent; }
+
+/* ------------------- MOBILE SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .button-header__link {
+    display: none; }
+  .button-portfolio__link {
+    font-size: 1.2em;
+    padding: 10px 15px; } }
+
+/* --------------- TABLET AND DESKTOP SECTION -------------- */
+@media only screen and (min-width: 768px) {
+  .button-header__link {
+    border: solid black 3px;
     color: #E31D3B;
-    position: relative;
     font-family: 'Crete Round', serif;
-    text-transform: uppercase;
-    border: solid black 3px; }
-    .button-read-more__link:active {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 30px auto 0;
+    padding: 10px 30px;
+    position: relative;
+    text-transform: uppercase; }
+    .button-header__link:hover {
+      color: white; }
+    .button-header__link:active {
       border: solid #E31D3B 3px;
       color: black !important;
       text-shadow: none !important; }
-    .button-read-more__link:hover {
-      color: white; }
-    .button-read-more__link::before {
+    .button-header__link::before {
       background: #E31D3B;
       content: '';
       width: 100%;
@@ -314,35 +361,17 @@ a {
       left: 0;
       height: 0;
       z-index: -1; }
-    .button-read-more__link:hover::before {
+    .button-header__link:hover::before {
       height: 102%; }
-    .button-read-more__link:active::before {
-      background: white; }
-
-/* ------------------- MOBILE SECTION ------------------- */
-@media only screen and (max-width: 767px) {
-  .button-read-more {
-    display: none; } }
-
-/* --------------- TABLET AND DESKTOP SECTION -------------- */
-@media only screen and (min-width: 768px) {
-  .button-read-more {
-    margin-top: 35px; }
-    .button-read-more__link {
-      font-size: 1.5em;
-      padding: 10px 25px; } }
-
-/* ------------------- DESKTOP SECTION -------------------- */
-@media only screen and (min-width: 1025px) {
-  .button-read-more__link {
-    padding: 15px 30px; } }
+    .button-header__link:active::before {
+      background: transparent; } }
 
 /*========================================================================================================*/
 /*================================================ HOME ==================================================*/
 /*========================================================================================================*/
 /*=============================================== SPACER =================================================*/
 .spacer {
-  margin-top: 60px;
+  margin-top: 30px;
   font-family: 'Crete Round', serif;
   position: relative;
   height: 100%;
@@ -704,15 +733,44 @@ a {
     .portfolio__subheading {
       font-size: 2.2em; } }
 
+.portfolio__project {
+  cursor: pointer;
+  width: 100%;
+  height: 100%; }
+
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .portfolio {
-    padding-top: 20px; } }
+    padding-top: 20px; }
+    .portfolio__projects-wrapper {
+      max-width: 500px;
+      margin: 0 auto; }
+    .portfolio__project:not(:first-child) {
+      margin-top: 20px; } }
 
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
 @media only screen and (min-width: 768px) {
   .portfolio {
-    padding-top: 30px; } }
+    padding-top: 30px; }
+    .portfolio__projects-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); }
+    .portfolio .project__img {
+      -o-object-fit: cover;
+         object-fit: cover;
+      height: 100%; }
+    .portfolio__project:nth-child(1) {
+      grid-row: 1 / span 3; }
+    .portfolio__project:nth-child(2) {
+      grid-row: 1 / span 2; }
+    .portfolio__project:nth-child(3) {
+      grid-row: 1 / span 3; }
+    .portfolio__project:nth-child(4) {
+      grid-row: 4 / span 3; }
+    .portfolio__project:nth-child(5) {
+      grid-row: 3 / span 2; }
+    .portfolio__project:nth-child(6) {
+      grid-row: 4 / span 3; } }
 
 .test {
   margin-top: 300px;

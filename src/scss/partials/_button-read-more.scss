@@ -3,60 +3,70 @@
 /*========================================================================================================*/
 /*========================================== Read More Button ============================================*/
 /*========================================================================================================*/
-.button-read-more{
+// button mixin
+@mixin button($font-color-active: color(background), $border-color: color(background), $background-active: transparent){
+  border: solid $border-color 3px;
+  color: color(main);
+  font-family: 'Crete Round', serif;
+  font-size: 1.5em;
   font-weight: bold;
-  &__link{
-    color: color(main);
-    position: relative;
-    font-family: 'Crete Round', serif;
-    text-transform: uppercase;
-    border: solid color(background) 3px;
-    &:active{
-      border: solid color(main) 3px;
-      color: color(background) !important;
-      text-shadow: none !important;
-    }
-    &:hover{
-      color: color(font);
-    }
-    &::before{
-      background: color(main);
-      content: '';
-      width: 100%;
-      position: absolute;
-      transition: all duration(fast);
-      bottom: -1%;
-      left: 0;
-      height: 0;
-      z-index: -1;
-    }
-    &:hover::before {
-      height: 102%;
-    }
-    &:active::before {
-      background: color(font);
-    }
+  margin: vertical-padding(medium) auto 0;
+  padding: 10px 30px;
+  position: relative;
+  text-transform: uppercase;
+  &:hover{
+    color: color(font);
   }
+  &:active{
+    border: solid color(main) 3px;
+    color: $font-color-active !important;
+    text-shadow: none !important;
+  }
+  &::before{
+    background: color(main);
+    content: '';
+    width: 100%;
+    position: absolute;
+    transition: all duration(fast);
+    bottom: -1%;
+    left: 0;
+    height: 0;
+    z-index: -1;
+  }
+  &:hover::before {
+    height: 102%;
+  }
+  &:active::before {
+    background: $background-active;
+  }
+}
+/*========================================== Styling ============================================*/
+.button-portfolio__link{
+  display: block;
+  max-width: 260px;
+  text-align: center;
+  @include button($font-color-active: color(font), $border-color: color(main));
 }
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: #{$mobile}) {
-  .button-read-more{
+  .button-header__link{
     display: none;
+  }
+  .button-portfolio__link {
+    font-size: 1.2em;
+    padding: 10px 15px;
   }
 }
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
 @media only screen and (min-width: #{$tablet-lower}) {
-  .button-read-more{
-    margin-top: 35px;
-    &__link {
-      font-size: 1.5em;
-      padding: 10px 25px;
-    }
+  .button-header__link{
+    @include button;
   }
 }
-/* ------------------- DESKTOP SECTION -------------------- */
-@media only screen and (min-width: #{$desktop}) {
-  .button-read-more__link {
-      padding: 15px 30px;
-  }
-}
+
+
+
+
+
+
+
