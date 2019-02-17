@@ -659,6 +659,12 @@ a {
 .services .card__heading {
   color: #E31D3B;
   font-family: 'Crete Round', serif; }
+  @media only screen and (max-width: 767px) {
+    .services .card__heading {
+      font-size: 1.2em; } }
+  @media only screen and (min-width: 768px) {
+    .services .card__heading {
+      font-size: 1.5em; } }
 
 .services .card__description {
   line-height: 1.1em; }
@@ -679,8 +685,6 @@ a {
     padding-top: 20px; }
     .services__cards-wrapper {
       grid-template-columns: repeat(2, 1fr); }
-    .services .card__heading {
-      font-size: 1.2em; }
     .services .card__img {
       max-width: 120px;
       width: 100%;
@@ -691,9 +695,7 @@ a {
   .services {
     padding-top: 30px; }
     .services__cards-wrapper {
-      grid-template-columns: repeat(3, 1fr); }
-    .services .card__heading {
-      font-size: 1.5em; } }
+      grid-template-columns: repeat(3, 1fr); } }
 
 /*=========================================== PORTFOLIO =================================================*/
 .portfolio__heading {
@@ -734,9 +736,59 @@ a {
       font-size: 2.2em; } }
 
 .portfolio__project {
-  cursor: pointer;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  position: relative; }
+
+.portfolio .project__overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.5s;
+  opacity: 1;
+  padding: 15px; }
+  .portfolio .project__overlay--shown {
+    opacity: 1; }
+
+.portfolio .project__description {
+  opacity: 1;
+  position: relative;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  transition: opacity 1s; }
+  .portfolio .project__description--shown {
+    opacity: 1; }
+  .portfolio .project__description p {
+    line-height: 1.1em;
+    font-size: 1em;
+    margin: 15px 0; }
+
+.portfolio .project__title {
+  color: #E31D3B;
+  font-family: 'Crete Round', serif;
+  font-size: 1.5em; }
+
+.portfolio .project__link {
+  margin: 0 auto;
+  display: block;
+  width: 80px;
+  font-weight: bold;
+  font-family: 'Crete Round', serif;
+  font-size: 1.2em;
+  border: solid white 3px;
+  color: white;
+  padding: 8px 0;
+  transition: all 0.5s; }
+  .portfolio .project__link:hover {
+    background-color: #E31D3B; }
+  .portfolio .project__link:active {
+    background-color: transparent;
+    color: #E31D3B; }
 
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: 767px) {
@@ -771,6 +823,42 @@ a {
       grid-row: 3 / span 2; }
     .portfolio__project:nth-child(6) {
       grid-row: 4 / span 3; } }
+
+/*=========================================== CONTACT =================================================*/
+.contact__heading {
+  color: #E31D3B;
+  font-family: 'Crete Round', serif;
+  padding-bottom: 20px; }
+  @media only screen and (max-width: 767px) {
+    .contact__heading {
+      font-size: 1.9em;
+      text-align: center; } }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .contact__heading {
+      font-size: 2.2em; } }
+  @media only screen and (min-width: 1025px) {
+    .contact__heading {
+      font-size: 2.7em; } }
+
+.contact__section {
+  line-height: 1.1em; }
+  @media only screen and (max-width: 767px) {
+    .contact__section {
+      font-size: 1em;
+      text-align: center; } }
+  @media only screen and (min-width: 768px) {
+    .contact__section {
+      font-size: 1.2em; } }
+
+/* ------------------- MOBILE SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .contact {
+    padding-top: 20px; } }
+
+/* --------------- TABLET AND DESKTOP SECTION -------------- */
+@media only screen and (min-width: 768px) {
+  .contact {
+    padding-top: 30px; } }
 
 .test {
   margin-top: 300px;

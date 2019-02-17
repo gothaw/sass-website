@@ -3,15 +3,47 @@ import enquire from '../lib/enquire.js'
 (function () {
 
     //jQuery variables
-    const $menuItems                = $('.menu__item');
+    const $menuItemsScroll          = $('.menu__item').not('.menu__home');
     const $toggleMenuIconImg        = $('.toggle__img');
+    const $menuItemsHome            = $('.menu__home');
 
     //variables
     const typingSpace               = document.querySelector('.header__typing-animation');
+    const menuItems                 = document.querySelectorAll('.menu__item');
 
     let toggleMenuActive = false;
     let typedText = ["Front-end.","Node.js.","JavaScript.","MySQL.","Python."];
 
+
+    /**
+     * @name    menuScroll
+     * @param   e - menu item click event
+     * @desc    Scrolls down to relevant section of the page after clicking on a menu item.
+     */
+    function menuScroll(e) {
+        let offset=0;
+        e.preventDefault();
+        const menuItemHref = $(e.target).attr("href");
+        $("html, body").animate(
+            {
+                "scrollTop" : $(menuItemHref).offset().top - offset
+            },
+            1000
+        );
+    }
+    /**
+     * @name    homeScroll
+     * @desc    Scrolls to the top of the page when logo is clicked (works only on home page).
+     */
+    function homeScroll(e) {
+        e.preventDefault();
+        $("html, body").animate(
+            {
+                "scrollTop" : 0
+            },
+            500
+        );
+    }
 
     /**
      * @name        typingAnimation
@@ -65,12 +97,12 @@ import enquire from '../lib/enquire.js'
     function registerMenu() {
         enquire.register("screen and (max-width: 767px)", {
             match: function () {
-                $menuItems.hide();
+                $(menuItems).hide();
                 $toggleMenuIconImg.attr("src","dist/img/icons/toggle-icon.png");
                 toggleMenuActive=false;
             },
             unmatch: function () {
-                $menuItems.show();
+                $(menuItems).show();
             }
         });
     }
@@ -80,7 +112,7 @@ import enquire from '../lib/enquire.js'
      * @desc        Slide toggle animation for hamburger menu. Changes src attribute for menu icon image when icon is clicked.
      */
     function toggleMenu() {
-        $menuItems.slideToggle();
+        $(menuItems).slideToggle();
         if(toggleMenuActive){
             $toggleMenuIconImg.attr("src","dist/img/icons/toggle-icon.png");
             toggleMenuActive=false;
@@ -93,6 +125,14 @@ import enquire from '../lib/enquire.js'
 
     function eventHandler() {
         $toggleMenuIconImg.on('click',toggleMenu);
+        $menuItemsScroll.on('click',function (e) {
+            menuScroll(e);
+        });
+        if($('#home-page').length){
+            $menuItemsHome.on('click',function (e) {
+                homeScroll(e);
+            });
+        }
     }
 
     function init() {

@@ -253,3 +253,31 @@ $skill-progress: (100%,100%,83.333%,50%,33.333%,33.333%,66.667%,66.667%,33.333%)
     height: 25px;
   }
 }
+//============================================== Services =================================================
+//mixin for card heading
+@mixin card-heading($font-color:color(main)){
+  color: $font-color;
+  font-family: 'Crete Round', serif;
+  @include mobile{
+    font-size: div-font-size(medium);
+  }
+  @include tablet-and-desktop{
+    font-size: div-font-size(large);
+  }
+}
+//============================================== Projects =================================================
+//mixin for image overlay
+@mixin image-overlay{
+  background-color: rgba(0,0,0,0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity duration(medium);
+  opacity: 1; //change
+  padding: 15px;
+  &--shown{
+    opacity: 1;
+  }
+}

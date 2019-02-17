@@ -21,25 +21,25 @@
             <nav class="menu">
                 <ul class="menu__wrapper">
                     <li class="menu__logo-wrapper menu__home">
-                        <a href="#"><img class="menu__logo" src="dist/img/jd_logo.png" width="120" height="80" alt="jd logo"></a>
+                        <a href="index.html"><img class="menu__logo menu__home" src="dist/img/jd_logo.png" width="120" height="80" alt="jd logo"></a>
                         <div class="menu__toggle">
                             <img class="toggle__img" src="dist/img/icons/toggle-icon.png" width="32" height="32" alt="toggle menu icon">
                         </div> <!--/menu__toggle-->
                     </li> <!--/menu__logo-wrapper menu__home-->
                     <li class="menu__item menu__home">
-                        <a class="menu__link" href="#">Home</a>
+                        <a class="menu__link" href="index.html">Home</a>
                     </li> <!--menu__item menu__home-->
                     <li class="menu__item">
-                        <a class="menu__link" href="#">About</a>
+                        <a class="menu__link" href="#about">About</a>
                     </li> <!--menu__item-->
                     <li class="menu__item">
-                        <a class="menu__link" href="#">Services</a>
+                        <a class="menu__link" href="#services">Services</a>
                     </li> <!--menu__item-->
                     <li class="menu__item">
-                        <a class="menu__link" href="#">Portfolio</a>
+                        <a class="menu__link" href="#portfolio">Portfolio</a>
                     </li> <!--menu__item-->
                     <li class="menu__item">
-                        <a class="menu__link" href="#">Contact</a>
+                        <a class="menu__link" href="#contact">Contact</a>
                     </li> <!--menu__item-->
                     <li class="menu__icons">
                         <div class="icons__text">You can find me on:</div> <!--/icons-wrapper__text-->
@@ -78,7 +78,7 @@
             </div> <!--/header-->
         </header>
         <main id="home-page">
-            <div class="about inner">
+            <div id="about" class="about inner">
                 <div class="about__description">
                     <div class="about__description-wrapper">
                         <h3 class="about__heading">About Me</h3> <!--/about__heading-->
@@ -121,14 +121,14 @@
                 <picture>
                     <source media="print" srcset="dist/img/spacer/spacer-img-1-large.jpg">
                     <source media="(max-width: 540px)" srcset="dist/img/spacer/spacer-img-1-540.jpg">
-                    <source media="(max-width: 768px)" srcset="dist/img/spacer/spacer-img-1-720.jpg">
+                    <source media="(max-width: 768px)" srcset="dist/img/spacer/spacer-img-1-768.jpg">
                     <source media="(max-width: 1025px)" srcset="dist/img/spacer/spacer-img-1-1080.jpg">
                     <source media="(max-width: 1440px)" srcset="dist/img/spacer/spacer-img-1-1440.jpg">
                     <img class="spacer__img" src="dist/img/spacer/spacer-img-1-large.jpg" alt="laptop, mug and a tea pot"> <!--/spacer__img-->
                 </picture>
                 <div class="spacer__text">"Lorem ipsum dolor sit amet, consectetur adipisicing elit."</div> <!--/spacer__text-->
             </div> <!--/spacer-->
-            <div class="services inner">
+            <div id="services" class="services inner">
                 <div class="services__description-wrapper">
                     <h3 class="services__heading">Services</h3> <!--/services__heading-->
                     <section class="services__section">
@@ -184,14 +184,14 @@
                 <picture>
                     <source media="print" srcset="dist/img/spacer/spacer-img-2-large.jpg">
                     <source media="(max-width: 540px)" srcset="dist/img/spacer/spacer-img-2-540.jpg">
-                    <source media="(max-width: 768px)" srcset="dist/img/spacer/spacer-img-2-720.jpg">
+                    <source media="(max-width: 768px)" srcset="dist/img/spacer/spacer-img-2-768.jpg">
                     <source media="(max-width: 1025px)" srcset="dist/img/spacer/spacer-img-2-1080.jpg">
                     <source media="(max-width: 1440px)" srcset="dist/img/spacer/spacer-img-2-1440.jpg">
                     <img class="spacer__img" src="dist/img/spacer/spacer-img-2-large.jpg" alt="laptop and a mobile phone on a table"> <!--/spacer__img-->
                 </picture>
                 <div class="spacer__text">"Dicta eum excepturi inventore magnam. A ab ad aperiam dignissimos tenetur."</div> <!--/spacer__text-->
             </div> <!--/spacer-->
-            <div class="portfolio inner">
+            <div id="portfolio" class="portfolio inner">
                 <div class="portfolio__description-wrapper">
                     <h3 class="portfolio__heading">Portfolio</h3> <!--/portfolio__heading-->
                     <section class="portfolio__section">
@@ -201,25 +201,116 @@
                 <h4 class="portfolio__subheading">Recent Projects</h4> <!--/portfolio__subheading-->
                 <div class="portfolio__projects-wrapper">
                     <div class="portfolio__project">
-                        <img class="project__img img-responsive" src="dist/img/projects/app_1.jpg" alt="">
+                        <picture>
+                            <source media="print" srcset="dist/img/projects/back-end-2-large.jpg">
+                            <source media="(max-width: 768px)" srcset="dist/img/projects/back-end-2-768.jpg">
+                            <img class="project__img img-responsive" src="dist/img/projects/back-end-2-1080.jpg" alt="financial web app 1">
+                        </picture>
+                        <div class="project__overlay">
+                            <div class="project__description">
+                                <h4 class="project__title">Web App 1</h4> <!--/project__title-->
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, inventore?</p>
+                                <div class="project__button">
+                                    <a class="project__link" href="#">More</a>
+                                </div> <!--/project__button-->
+                            </div> <!--/project__description-->
+                        </div> <!--/project__overlay-->
                     </div> <!--/portfolio__project-->
                     <div class="portfolio__project">
-                        <img class="project__img img-responsive" src="dist/img/projects/app_2.jpg" alt="">
+                        <picture>
+                            <source media="print" srcset="dist/img/projects/app-2-large.jpg">
+                            <source media="(max-width: 768px)" srcset="dist/img/projects/app-2-768.jpg">
+                            <img class="project__img img-responsive" src="dist/img/projects/app-2-1080.jpg" alt="news mobile app">
+                        </picture>
+                        <div class="project__overlay">
+                            <div class="project__description">
+                                <h4 class="project__title">App 2</h4> <!--/project__title-->
+                                <p>Lorem ipsum dolor sit amet.</p>
+                                <div class="project__button">
+                                    <a class="project__link" href="#">More</a>
+                                </div> <!--/project__button-->
+                            </div> <!--/project__description-->
+                        </div> <!--/project__overlay-->
                     </div> <!--/portfolio__project-->
                     <div class="portfolio__project">
-                        <img class="project__img img-responsive" src="dist/img/projects/app_3.jpg" alt="">
+                        <picture>
+                            <source media="print" srcset="dist/img/projects/app-3-large.jpg">
+                            <source media="(max-width: 768px)" srcset="dist/img/projects/app-3-768.jpg">
+                            <img class="project__img img-responsive" src="dist/img/projects/app-3-1080.jpg" alt="business app">
+                        </picture>
+                        <div class="project__overlay">
+                            <div class="project__description">
+                                <h4 class="project__title">App 3</h4> <!--/project__title-->
+                                <p>Aliquid ea est facilis, in minima placeat quas quisquam quos veritatis voluptatem! Accusantium animi, assumenda cupiditate deleniti.</p>
+                                <div class="project__button">
+                                    <a class="project__link" href="#">More</a>
+                                </div> <!--/project__button-->
+                            </div> <!--/project__description-->
+                        </div> <!--/project__overlay-->
                     </div> <!--/portfolio__project-->
                     <div class="portfolio__project">
-                        <img class="project__img img-responsive" src="dist/img/projects/app_2.jpg" alt="">
+                        <picture>
+                            <source media="print" srcset="dist/img/projects/front-end-4-large.jpg">
+                            <source media="(max-width: 768px)" srcset="dist/img/projects/front-end-4-768.jpg">
+                            <img class="project__img img-responsive" src="dist/img/projects/front-end-4-1080.jpg" alt="frontend project">
+                        </picture>
+                        <div class="project__overlay">
+                            <div class="project__description">
+                                <h4 class="project__title">Website 4</h4> <!--/project__title-->
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis enim expedita fuga fugiat obcaecati optio, repellat sed soluta!</p>
+                                <div class="project__button">
+                                    <a class="project__link" href="#">More</a>
+                                </div> <!--/project__button-->
+                            </div> <!--/project__description-->
+                        </div> <!--/project__overlay-->
                     </div> <!--/portfolio__project-->
                     <div class="portfolio__project">
-                        <img class="project__img img-responsive" src="dist/img/projects/app_3.jpg" alt="">
+                        <picture>
+                            <source media="print" srcset="dist/img/projects/back-end-4-large.jpg">
+                            <source media="(max-width: 768px)" srcset="dist/img/projects/back-end-4-768.jpg">
+                            <img class="project__img img-responsive" src="dist/img/projects/back-end-4-1080.jpg" alt="business web app">
+                        </picture>
+                        <div class="project__overlay">
+                            <div class="project__description">
+                                <h4 class="project__title">Web App 4</h4> <!--/project__title-->
+                                <p>Adipisicing elit. Aut, nobis.</p>
+                                <div class="project__button">
+                                    <a class="project__link" href="#">More</a>
+                                </div> <!--/project__button-->
+                            </div> <!--/project__description-->
+                        </div> <!--/project__overlay-->
                     </div> <!--/portfolio__project-->
                     <div class="portfolio__project">
-                        <img class="project__img img-responsive" src="dist/img/projects/app_2.jpg" alt="">
+                        <picture>
+                            <source media="print" srcset="dist/img/projects/data-4-large.jpg">
+                            <source media="(max-width: 768px)" srcset="dist/img/projects/data-4-768.jpg">
+                            <img class="project__img img-responsive" src="dist/img/projects/data-4-1080.jpg" alt="database normalization">
+                        </picture>
+                        <div class="project__overlay">
+                            <div class="project__description">
+                                <h4 class="project__title">Database Project</h4> <!--/project__title-->
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at reiciendis saepe sit soluta voluptatem!</p>
+                                <div class="project__button">
+                                    <a class="project__link" href="#">More</a>
+                                </div> <!--/project__button-->
+                            </div> <!--/project__description-->
+                        </div> <!--/project__overlay-->
                     </div> <!--/portfolio__project-->
                     <div class="portfolio__project">
-                        <img class="project__img img-responsive" src="dist/img/projects/app_1.jpg" alt="">
+                        <picture>
+                            <source media="print" srcset="dist/img/projects/front-end-2-large.jpg">
+                            <source media="(max-width: 768px)" srcset="dist/img/projects/front-end-2-768.jpg">
+                            <img class="project__img img-responsive" src="dist/img/projects/front-end-2-1080.jpg" alt="bakery website">
+                        </picture>
+                        <div class="project__overlay">
+                            <div class="project__description">
+                                <h4 class="project__title">Website 2</h4> <!--/project__title-->
+                                <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                                <div class="project__button">
+                                    <a class="project__link" href="#">More</a>
+                                </div> <!--/project__button-->
+                            </div> <!--/project__description-->
+                        </div> <!--/project__overlay-->
                     </div> <!--/portfolio__project-->
                 </div> <!--/portfolio__projects-wrapper-->
                 <div class="button-portfolio">
@@ -230,21 +321,27 @@
                 <picture>
                     <source media="print" srcset="dist/img/spacer/spacer-img-3-large.jpg">
                     <source media="(max-width: 540px)" srcset="dist/img/spacer/spacer-img-3-540.jpg">
-                    <source media="(max-width: 768px)" srcset="dist/img/spacer/spacer-img-3-720.jpg">
+                    <source media="(max-width: 768px)" srcset="dist/img/spacer/spacer-img-3-768.jpg">
                     <source media="(max-width: 1025px)" srcset="dist/img/spacer/spacer-img-3-1080.jpg">
                     <source media="(max-width: 1440px)" srcset="dist/img/spacer/spacer-img-3-1440.jpg">
                     <img class="spacer__img" src="dist/img/spacer/spacer-img-3-large.jpg" alt="laptop on a chair"> <!--/spacer__img-->
                 </picture>
                 <div class="spacer__text">"Quo sapiente similique sint sunt suscipit tenetur unde ut velit vitae voluptas."</div> <!--/spacer__text-->
             </div> <!--/spacer-->
+            <div id="contact" class="contact inner">
+                <div class="contact__description-wrapper">
+                    <h3 class="contact__heading">Contact</h3> <!--/contact__heading-->
+                    <section class="contact__section">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci amet delectus deleniti distinctio ea eius est excepturi ipsa, nesciunt nihil quas quibusdam quos veniam.
+                    </section> <!--/contact__section-->
+                </div> <!--/contact__description-wrapper-->
+            </div> <!--/contact-->
+
+
+            <div class="test">Hello World</div>
+            <div class="test">Hello World</div>
+
         </main>
-        <div>
-
-            <p class="test">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad, architecto consequatur consequuntur delectus dolorem eaque eum, fugit illum inventore iusto laboriosam laudantium magnam nam neque nisi nostrum officia perferendis placeat quas qui quidem quo similique sunt suscipit tenetur totam vel veritatis vitae voluptates. Cupiditate debitis eligendi necessitatibus neque qui quisquam, ratione similique tenetur ut, vero voluptatibus voluptatum. Ab accusantium, ad aliquam aperiam aspernatur cum, ea ex exercitationem explicabo laboriosam molestiae mollitia nam quas reiciendis, reprehenderit soluta sunt suscipit. At eum optio possimus quaerat, quis saepe sed tempore! Accusantium asperiores cupiditate debitis eveniet, exercitationem fuga itaque laudantium mollitia nam nesciunt nostrum numquam placeat possimus quae quasi quod reprehenderit sint temporibus, veniam vero. Blanditiis consectetur deleniti et laudantium nostrum odit tenetur velit? A amet commodi consequatur cum debitis, dignissimos dolore, ducimus ea et labore molestiae, non sed. Doloribus dolorum libero praesentium quod tempore unde vero. Aspernatur dolores doloribus eius nobis odit quibusdam repellendus tempora ullam ut! Asperiores delectus deserunt dignissimos, distinctio dolorem doloremque eum facilis illo, impedit itaque iure magnam maxime necessitatibus odit officiis pariatur perferendis quasi qui quibusdam quis quod repudiandae, rerum sapiente sint temporibus veniam voluptatum. Fuga, non nulla. Ab, accusamus adipisci aliquid at autem culpa cumque eligendi eum id, inventore ipsa iste laudantium libero minus, natus neque non nostrum odio odit omnis optio perspiciatis quia recusandae similique totam unde vitae voluptas. Aliquam aspernatur at eius iusto maiores nemo nisi quidem similique tempore unde! Aliquam, autem fugiat ipsam nam saepe velit. A ab accusamus adipisci architecto beatae dignissimos eos esse eum impedit iste iusto labore mollitia nesciunt nostrum odio officia officiis omnis pariatur quam quas qui quia quod quos rem repellendus saepe temporibus totam unde ut vel veniam veritatis vitae, voluptatibus? Aliquam, amet aspernatur atque dolorem enim eos expedita explicabo inventore, laudantium maiores odio odit quaerat quo sint voluptas!</p>
-            <p class="test">Hello World</p>
-            <p class="test">Hello World</p>
-
-        </div>
     </div> <!--/wrapper-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
