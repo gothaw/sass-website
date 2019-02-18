@@ -259,9 +259,6 @@
       color: color(main);
     }
   }
-  &__lightbox{
-    display: none;
-  }
 }
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: #{$mobile}) {
@@ -315,6 +312,75 @@
     }
   }
 }
+/*========================================== LIGHTBOX =================================================*/
+.lightbox{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: color(background);
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: none;
+  &__wrapper{
+    position: relative;
+    margin: 0 auto;
+  }
+  &__img-wrapper{
+    position: relative;
+    padding-top: 60px;
+    margin: 0 auto;
+  }
+  &__description{
+    @include section-text;
+    text-align: center;
+    p:not(:last-child){
+      margin-bottom: 15px;
+    }
+    p:last-child{
+      margin-bottom: 25px;
+    }
+  }
+  .description__title{
+    @include card-heading;
+    font-weight: bold;
+    margin: 15px 0;
+  }
+  .lightbox__close{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    user-select: none;
+    &:hover{
+      color: darken(color(font),20%);
+    }
+  }
+}
+/* ------------------- MOBILE SECTION ------------------- */
+@media only screen and (max-width: #{$mobile}) {
+  .lightbox__wrapper{
+    padding: 0 side-padding(mobile);
+  }
+  .lightbox__close{
+    font-size: 1.9em;
+  }
+}
+/* --------------- TABLET AND DESKTOP SECTION -------------- */
+@media only screen and (min-width: #{$tablet-lower}){
+  .lightbox__wrapper{
+    padding: 0 side-padding(tablet);
+  }
+  .lightbox__img-wrapper{
+    max-width: 810px;
+  }
+  .lightbox__close{
+    font-size: 2.5em;
+  }
+}
 /*=========================================== CONTACT =================================================*/
 .contact{
   &__heading{
@@ -323,7 +389,6 @@
   &__section{
     @include section-text;
   }
-
 }
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: #{$mobile}) {

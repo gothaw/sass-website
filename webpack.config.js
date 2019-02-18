@@ -18,6 +18,7 @@ const entry = {
         './src/js/index.js',
         './src/js/modules/header.js',
         './src/js/modules/projects.js',
+        './src/js/modules/lightbox.js',
         './src/scss/main.scss'
     ]
 };
