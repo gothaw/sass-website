@@ -11,6 +11,7 @@ if ($('#home-page').length){
         //variables
         const skills              = document.getElementById('skills');
         const skillBars           = document.querySelectorAll('.skill__bar');
+        const clientCarousel      = document.querySelector('.portfolio__carousel');
 
         /**
          * @name        spacerImgParallax
@@ -109,6 +110,26 @@ if ($('#home-page').length){
             $targetOverlay.slideUp(600);
         }
 
+        /**
+         * @name        animateClientOpinions
+         * @desc        Functions animates client logos using setInterval and by changing left property in CSS.
+         *              If the last set of logos is shown, the function changes left property to 0 and shows first four logos.
+         */
+        function animateClientOpinions() {
+            //index of set of logos that is currently displayed
+            let i = 0;
+            setInterval(function () {
+                if (i<2){
+                    i++;
+                    clientCarousel.style.left = `${-i*100}%`;
+                }
+                else{
+                    i=0;
+                    clientCarousel.style.left = "0";
+                }
+            },5000)
+        }
+
         function eventHandler() {
             $('.spacer__img').each(function () {
                 const $spacerImg          = $(this);
@@ -127,6 +148,7 @@ if ($('#home-page').length){
             eventHandler();
             responsiveSpacerImg();
             animateSkillBars();
+            animateClientOpinions();
         }
 
         window.addEventListener("load", init);

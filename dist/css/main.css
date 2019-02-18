@@ -371,7 +371,7 @@ a {
 /*========================================================================================================*/
 /*=============================================== SPACER =================================================*/
 .spacer {
-  margin-top: 30px;
+  margin: 60px 0;
   font-family: 'Crete Round', serif;
   position: relative;
   height: 100%;
@@ -410,17 +410,19 @@ a {
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: 767px) {
   .spacer {
+    margin: 20px 0;
     height: 300px; } }
 
 /* ------------------- TABLET SECTION ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .spacer {
+    margin: 30px 0;
     height: 450px; } }
 
 /* ------------------- DESKTOP SECTION -------------------- */
 @media only screen and (min-width: 1025px) {
   .spacer {
-    margin-left: 250px;
+    margin: 30px 0 30px 250px;
     height: 550px; } }
 
 /*=============================================== ABOUT ==================================================*/
@@ -681,21 +683,17 @@ a {
 
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: 767px) {
-  .services {
-    padding-top: 20px; }
-    .services__cards-wrapper {
-      grid-template-columns: repeat(2, 1fr); }
-    .services .card__img {
-      max-width: 120px;
-      width: 100%;
-      height: auto; } }
+  .services__cards-wrapper {
+    grid-template-columns: repeat(2, 1fr); }
+  .services .card__img {
+    max-width: 120px;
+    width: 100%;
+    height: auto; } }
 
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
 @media only screen and (min-width: 768px) {
-  .services {
-    padding-top: 30px; }
-    .services__cards-wrapper {
-      grid-template-columns: repeat(3, 1fr); } }
+  .services__cards-wrapper {
+    grid-template-columns: repeat(3, 1fr); } }
 
 /*=========================================== PORTFOLIO =================================================*/
 .portfolio__heading {
@@ -787,39 +785,63 @@ a {
     background-color: transparent;
     color: #E31D3B; }
 
+.portfolio__carousel-wrapper {
+  position: relative;
+  overflow: hidden; }
+
+.portfolio__carousel {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 300%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s; }
+
+.portfolio .carousel__section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap; }
+
+.portfolio .carousel__logo-wrapper {
+  text-align: center; }
+
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: 767px) {
-  .portfolio {
-    padding-top: 20px; }
-    .portfolio__projects-wrapper {
-      max-width: 500px;
-      margin: 0 auto; }
-    .portfolio__project:not(:first-child) {
-      margin-top: 20px; } }
+  .portfolio__projects-wrapper {
+    max-width: 500px;
+    margin: 0 auto; }
+  .portfolio__project:not(:first-child) {
+    margin-top: 20px; }
+  .portfolio .carousel__logo-wrapper {
+    padding: 10px 0;
+    width: 50%; } }
 
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
 @media only screen and (min-width: 768px) {
-  .portfolio {
-    padding-top: 30px; }
-    .portfolio__projects-wrapper {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); }
-    .portfolio .project__img {
-      -o-object-fit: cover;
-         object-fit: cover;
-      height: 100%; }
-    .portfolio__project:nth-child(1) {
-      grid-row: 1 / span 3; }
-    .portfolio__project:nth-child(2) {
-      grid-row: 1 / span 2; }
-    .portfolio__project:nth-child(3) {
-      grid-row: 1 / span 3; }
-    .portfolio__project:nth-child(4) {
-      grid-row: 4 / span 3; }
-    .portfolio__project:nth-child(5) {
-      grid-row: 3 / span 2; }
-    .portfolio__project:nth-child(6) {
-      grid-row: 4 / span 3; } }
+  .portfolio__projects-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); }
+  .portfolio .project__img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 100%; }
+  .portfolio__project:nth-child(1) {
+    grid-row: 1 / span 3; }
+  .portfolio__project:nth-child(2) {
+    grid-row: 1 / span 2; }
+  .portfolio__project:nth-child(3) {
+    grid-row: 1 / span 3; }
+  .portfolio__project:nth-child(4) {
+    grid-row: 4 / span 3; }
+  .portfolio__project:nth-child(5) {
+    grid-row: 3 / span 2; }
+  .portfolio__project:nth-child(6) {
+    grid-row: 4 / span 3; }
+  .portfolio .carousel__logo-wrapper {
+    width: 25%; } }
 
 /*========================================== LIGHTBOX =================================================*/
 .lightbox {
@@ -921,15 +943,7 @@ a {
       font-size: 1.2em; } }
 
 /* ------------------- MOBILE SECTION ------------------- */
-@media only screen and (max-width: 767px) {
-  .contact {
-    padding-top: 20px; } }
-
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
-@media only screen and (min-width: 768px) {
-  .contact {
-    padding-top: 30px; } }
-
 .test {
   margin-top: 300px;
   text-align: center; }

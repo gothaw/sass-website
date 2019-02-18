@@ -6,7 +6,7 @@
 
 /*=============================================== SPACER =================================================*/
 .spacer{
-  margin-top: vertical-padding(medium);
+  margin: vertical-padding(large) 0;
   font-family: 'Crete Round', serif;
   position: relative;
   height: 100%;
@@ -27,19 +27,21 @@
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: #{$mobile}) {
   .spacer{
+    margin: vertical-padding(small) 0;
     height: 300px;
   }
 }
 /* ------------------- TABLET SECTION ----------- */
 @media only screen and (min-width: #{$tablet-lower}) and (max-width: #{$tablet-upper}){
   .spacer{
+    margin: vertical-padding(medium) 0;
     height: 450px;
   }
 }
 /* ------------------- DESKTOP SECTION -------------------- */
 @media only screen and (min-width: #{$desktop}) {
   .spacer{
-    margin-left: $nav-bar-width;
+    margin: vertical-padding(medium) 0 vertical-padding(medium) $nav-bar-width;
     height: 550px;
   }
 }
@@ -171,7 +173,7 @@
     }
   }
   .card__heading{
-    @include card-heading;
+    @include small-subheading;
   }
   .card__description{
     @include section-text;
@@ -183,7 +185,6 @@
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: #{$mobile}) {
   .services{
-    padding-top: vertical-padding(small);
     &__cards-wrapper{
       grid-template-columns: repeat(2, 1fr);
     }
@@ -197,7 +198,6 @@
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
 @media only screen and (min-width: #{$tablet-lower}){
   .services{
-    padding-top: vertical-padding(medium);
     &__cards-wrapper{
       grid-template-columns: repeat(3, 1fr);
     }
@@ -241,29 +241,35 @@
     font-size: div-font-size(large);
   }
   .project__button{
-    margin: 0 auto;
-    width: 80px;
-    font-weight: bold;
-    font-family: 'Crete Round', serif;
-    font-size: div-font-size(medium);
-    border: solid color(font) 3px;
-    color: color(font);
-    padding: 8px 0;
-    user-select: none;
+    @include overlay-button;
+  }
+  &__carousel-wrapper{
+    position: relative;
+    overflow: hidden;
+  }
+  &__carousel{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 300%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     transition: all duration(medium);
-    &:hover{
-      background-color: color(main);
-    }
-    &:active{
-      background-color: transparent;
-      color: color(main);
-    }
+  }
+  .carousel__section{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .carousel__logo-wrapper{
+    text-align: center;
   }
 }
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: #{$mobile}) {
   .portfolio{
-    padding-top: vertical-padding(small);
     &__projects-wrapper{
       max-width: 500px;
       margin: 0 auto;
@@ -271,12 +277,15 @@
     &__project:not(:first-child){
       margin-top: vertical-padding(small);
     }
+    .carousel__logo-wrapper{
+      padding: 10px 0;
+      width: 50%;
+    }
   }
 }
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
 @media only screen and (min-width: #{$tablet-lower}){
   .portfolio{
-    padding-top: vertical-padding(medium);
     &__projects-wrapper{
       @debug "assumed to have 7 images in the grid";
       display: grid;
@@ -309,6 +318,9 @@
           grid-row: 3 / span 2;
         }
       }
+    }
+    .carousel__logo-wrapper{
+      width: 25%;
     }
   }
 }
@@ -343,7 +355,7 @@
     }
   }
   .description__title{
-    @include card-heading;
+    @include small-subheading;
     font-weight: bold;
     margin: 15px 0;
   }
@@ -393,14 +405,12 @@
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: #{$mobile}) {
   .contact{
-    padding-top: vertical-padding(small);
 
   }
 }
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
 @media only screen and (min-width: #{$tablet-lower}){
   .contact{
-    padding-top: vertical-padding(medium);
 
   }
 }
