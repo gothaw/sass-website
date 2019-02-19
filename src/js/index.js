@@ -9,9 +9,10 @@ if ($('#home-page').length){
         const $projectOverlay       = $('.project__overlay');
 
         //variables
-        const skills              = document.getElementById('skills');
-        const skillBars           = document.querySelectorAll('.skill__bar');
-        const clientCarousel      = document.querySelector('.portfolio__carousel');
+        const skills                = document.getElementById('skills');
+        const skillBars             = document.querySelectorAll('.skill__bar');
+        const clientCarousel        = document.querySelector('.portfolio__carousel');
+        const areaOfInterest        = document.querySelector(".contact__select");
 
         /**
          * @name        spacerImgParallax
@@ -130,6 +131,21 @@ if ($('#home-page').length){
             },5000)
         }
 
+        /**
+         * @name        greyOutSelectPlaceholder
+         * @desc        Adds contact__select--grey class to the select tag in the form if first placeholder (first option) is selected.
+         *              If other option is selected the class is removed.
+         */
+        function greyOutSelectPlaceholder(){
+            if(areaOfInterest[0].selected){
+                areaOfInterest.classList.add("contact__select--grey");
+            }
+            else{
+                areaOfInterest.classList.remove("contact__select--grey");
+            }
+        }
+
+
         function eventHandler() {
             $('.spacer__img').each(function () {
                 const $spacerImg          = $(this);
@@ -142,6 +158,7 @@ if ($('#home-page').length){
             $projectOverlay.on('click',function (e) {
                 hideProjectDescription(e);
             });
+            areaOfInterest.addEventListener('change',greyOutSelectPlaceholder);
         }
 
         function init() {
@@ -149,6 +166,7 @@ if ($('#home-page').length){
             responsiveSpacerImg();
             animateSkillBars();
             animateClientOpinions();
+            greyOutSelectPlaceholder();
         }
 
         window.addEventListener("load", init);

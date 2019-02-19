@@ -16,6 +16,7 @@ $menu-font-medium: 20px;
 $menu-font-small: 16px;
 $colors: (
   background: black,
+  background-light: #dddddd,
   font: white,
   main: #E31D3B,
   menu-item-accent: rgba(55, 55, 55, 0.5),
@@ -178,6 +179,30 @@ $skill-progress: (100%,100%,83.333%,50%,33.333%,33.333%,66.667%,66.667%,33.333%)
     font-size: div-font-size(medium);
   }
 }
+//mixin for secondary button used for overlay and submit
+@mixin secondary-button($width,$color:color(font),$color-border:color(font)){
+  background-color: transparent;
+  border: solid 2px $color-border;
+  color: $color;
+  cursor: pointer;
+  display: block;
+  font-family: 'Crete Round', serif;
+  font-size: div-font-size(medium);
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 8px 0;
+  width: $width;
+  user-select: none;
+  transition: all duration(medium);
+  &:hover{
+    background-color: color(main);
+  }
+  &:active{
+    background-color: transparent;
+    color: color(main);
+  }
+}
+
 //=============================================== Header ===============================================
 @mixin typing-animation{
   position: relative;
@@ -274,24 +299,4 @@ $skill-progress: (100%,100%,83.333%,50%,33.333%,33.333%,66.667%,66.667%,33.333%)
   height: 100%;
   width: 100%;
   padding: 15px;
-}
-//mixin for overlay button
-@mixin overlay-button{
-  margin: 0 auto;
-  width: 80px;
-  font-weight: bold;
-  font-family: 'Crete Round', serif;
-  font-size: div-font-size(medium);
-  border: solid color(font) 3px;
-  color: color(font);
-  padding: 8px 0;
-  user-select: none;
-  transition: all duration(medium);
-  &:hover{
-    background-color: color(main);
-  }
-  &:active{
-    background-color: transparent;
-    color: color(main);
-  }
 }

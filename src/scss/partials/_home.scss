@@ -6,10 +6,8 @@
 
 /*=============================================== SPACER =================================================*/
 .spacer{
-  margin: vertical-padding(large) 0;
   font-family: 'Crete Round', serif;
   position: relative;
-  height: 100%;
   text-align: center;
   overflow: hidden;
   &__img{
@@ -27,22 +25,20 @@
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: #{$mobile}) {
   .spacer{
-    margin: vertical-padding(small) 0;
     height: 300px;
   }
 }
 /* ------------------- TABLET SECTION ----------- */
 @media only screen and (min-width: #{$tablet-lower}) and (max-width: #{$tablet-upper}){
   .spacer{
-    margin: vertical-padding(medium) 0;
-    height: 450px;
+    height: 400px;
   }
 }
 /* ------------------- DESKTOP SECTION -------------------- */
 @media only screen and (min-width: #{$desktop}) {
   .spacer{
-    margin: vertical-padding(medium) 0 vertical-padding(medium) $nav-bar-width;
-    height: 550px;
+    margin-left: $nav-bar-width;
+    height: 500px;
   }
 }
 /*=============================================== ABOUT ==================================================*/
@@ -101,7 +97,7 @@
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: #{$mobile}) {
   .about{
-    padding-top: vertical-padding(small);
+    padding: vertical-padding(small) 0;
     &__img{
       width: 100%;
       height: auto;
@@ -124,7 +120,7 @@
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
 @media only screen and (min-width: #{$tablet-lower}){
   .about{
-    padding-top: vertical-padding(medium);
+    padding: vertical-padding(medium) 0;
     &__description{
       display: flex;
       justify-content: space-between;
@@ -149,11 +145,13 @@
 }
 /*=========================================== SERVICES =================================================*/
 .services{
+  background-color: color(background-light);
   &__heading{
     @include section-heading;
   }
   &__section{
     @include section-text;
+    color: color(background);
   }
   &__cards-wrapper{
     display: grid;
@@ -166,10 +164,10 @@
   }
   @for $i from 0 through 3{
     &__card:nth-child(#{2*$i}){
-      background-color: darken(white,30%);
+      background-color: color(background-light);
     }
     &__card:nth-child(#{2*$i+1}){
-      background-color: darken(white,10%);
+      background-color: darken(color(background-light),10%);
     }
   }
   .card__heading{
@@ -185,6 +183,7 @@
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: #{$mobile}) {
   .services{
+    padding: vertical-padding(small) 0;
     &__cards-wrapper{
       grid-template-columns: repeat(2, 1fr);
     }
@@ -198,6 +197,7 @@
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
 @media only screen and (min-width: #{$tablet-lower}){
   .services{
+    padding: vertical-padding(medium) 0;
     &__cards-wrapper{
       grid-template-columns: repeat(3, 1fr);
     }
@@ -241,7 +241,7 @@
     font-size: div-font-size(large);
   }
   .project__button{
-    @include overlay-button;
+    @include secondary-button($width:80px);
   }
   &__carousel-wrapper{
     position: relative;
@@ -270,6 +270,7 @@
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: #{$mobile}) {
   .portfolio{
+    padding: vertical-padding(small) 0;
     &__projects-wrapper{
       max-width: 500px;
       margin: 0 auto;
@@ -286,6 +287,7 @@
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
 @media only screen and (min-width: #{$tablet-lower}){
   .portfolio{
+    padding: vertical-padding(medium) 0;
     &__projects-wrapper{
       @debug "assumed to have 7 images in the grid";
       display: grid;
@@ -395,22 +397,65 @@
 }
 /*=========================================== CONTACT =================================================*/
 .contact{
+  background-color: color(background-light);
   &__heading{
     @include section-heading;
   }
   &__section{
     @include section-text;
+    color: color(background);
+  }
+  &__form{
+    max-width: 500px;
+    margin: vertical-padding(small) auto 0;
+  }
+  &__input, &__select, &__text-area{
+    background: transparent;
+    border: solid 2px color(background);
+    display: block;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.1em;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    transition: border duration(medium);
+    &::placeholder{
+      color: rgba(120, 120, 120, 0.9);
+      opacity: 1;
+    }
+    &:focus{
+      border: solid 2px color(main);
+    }
+  }
+  &__text-area{
+    resize: vertical;
+    height: 150px;
+  }
+  &__select{
+    appearance: none;
+    background: url("../../dist/img/icons/drop-down.png") no-repeat calc(100% - 10px);
+    cursor: pointer;
+    option{
+      color: #000;
+    }
+    &--grey{
+      color: rgba(120, 120, 120, 0.9);
+    }
+  }
+  &__submit{
+    @include secondary-button($width:120px,$color:color(background),$color-border:color(background));
   }
 }
 /* ------------------- MOBILE SECTION ------------------- */
 @media only screen and (max-width: #{$mobile}) {
   .contact{
-
+    padding: vertical-padding(small) 0;
   }
 }
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
 @media only screen and (min-width: #{$tablet-lower}){
   .contact{
-
+    padding: vertical-padding(medium) 0;
   }
 }
