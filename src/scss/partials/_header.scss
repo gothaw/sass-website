@@ -56,7 +56,7 @@
 }
 
 /* ------------------- MOBILE SECTION ------------------- */
-@media only screen and (max-width: #{$mobile}) {
+@include mobile{
   .menu{
     &__toggle{
       display: block;
@@ -95,7 +95,7 @@
   }
 }
 /* ------------------- TABLET SECTION ----------- */
-@media only screen and (min-width: #{$tablet-lower}) and (max-width: #{$tablet-upper}){
+@include tablet{
   .menu{
     padding: 0 side-padding(tablet);
     &__wrapper{
@@ -136,7 +136,7 @@
   }
 }
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
-@media only screen and (min-width: #{$tablet-lower}){
+@include tablet-and-desktop{
   .menu{
     z-index: 10;
     &__item{
@@ -167,7 +167,7 @@
   }
 }
 /* ------------------- DESKTOP SECTION -------------------- */
-@media only screen and (min-width: #{$desktop}) {
+@include desktop{
   .menu{
     position: fixed;
     top: 0;

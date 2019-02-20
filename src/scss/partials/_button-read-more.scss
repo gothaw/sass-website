@@ -48,7 +48,7 @@
   @include button($font-color-active: color(font), $border-color: color(main));
 }
 /* ------------------- MOBILE SECTION ------------------- */
-@media only screen and (max-width: #{$mobile}) {
+@include mobile{
   .button-header__link{
     display: none;
   }
@@ -58,7 +58,7 @@
   }
 }
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
-@media only screen and (min-width: #{$tablet-lower}) {
+@include tablet-and-desktop{
   .button-header__link{
     @include button;
   }

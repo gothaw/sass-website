@@ -23,19 +23,19 @@
   }
 }
 /* ------------------- MOBILE SECTION ------------------- */
-@media only screen and (max-width: #{$mobile}) {
+@include mobile{
   .spacer{
     height: 300px;
   }
 }
 /* ------------------- TABLET SECTION ----------- */
-@media only screen and (min-width: #{$tablet-lower}) and (max-width: #{$tablet-upper}){
+@include tablet{
   .spacer{
     height: 400px;
   }
 }
 /* ------------------- DESKTOP SECTION -------------------- */
-@media only screen and (min-width: #{$desktop}) {
+@include desktop{
   .spacer{
     margin-left: $nav-bar-width;
     height: 500px;
@@ -95,7 +95,7 @@
   }
 }
 /* ------------------- MOBILE SECTION ------------------- */
-@media only screen and (max-width: #{$mobile}) {
+@include mobile{
   .about{
     padding: vertical-padding(small) 0;
     &__img{
@@ -118,7 +118,7 @@
   }
 }
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
-@media only screen and (min-width: #{$tablet-lower}){
+@include tablet-and-desktop{
   .about{
     padding: vertical-padding(medium) 0;
     &__description{
@@ -181,7 +181,7 @@
   }
 }
 /* ------------------- MOBILE SECTION ------------------- */
-@media only screen and (max-width: #{$mobile}) {
+@include mobile{
   .services{
     padding: vertical-padding(small) 0;
     &__cards-wrapper{
@@ -195,7 +195,7 @@
   }
 }
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
-@media only screen and (min-width: #{$tablet-lower}){
+@include tablet-and-desktop{
   .services{
     padding: vertical-padding(medium) 0;
     &__cards-wrapper{
@@ -268,7 +268,7 @@
   }
 }
 /* ------------------- MOBILE SECTION ------------------- */
-@media only screen and (max-width: #{$mobile}) {
+@include mobile{
   .portfolio{
     padding: vertical-padding(small) 0;
     &__projects-wrapper{
@@ -285,7 +285,7 @@
   }
 }
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
-@media only screen and (min-width: #{$tablet-lower}){
+@include tablet-and-desktop{
   .portfolio{
     padding: vertical-padding(medium) 0;
     &__projects-wrapper{
@@ -375,7 +375,7 @@
   }
 }
 /* ------------------- MOBILE SECTION ------------------- */
-@media only screen and (max-width: #{$mobile}) {
+@include mobile{
   .lightbox__wrapper{
     padding: 0 side-padding(mobile);
   }
@@ -384,7 +384,7 @@
   }
 }
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
-@media only screen and (min-width: #{$tablet-lower}){
+@include tablet-and-desktop{
   .lightbox__wrapper{
     padding: 0 side-padding(tablet);
   }
@@ -448,13 +448,13 @@
   }
 }
 /* ------------------- MOBILE SECTION ------------------- */
-@media only screen and (max-width: #{$mobile}) {
+@include mobile{
   .contact{
     padding: vertical-padding(small) 0;
   }
 }
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
-@media only screen and (min-width: #{$tablet-lower}){
+@include tablet-and-desktop{
   .contact{
     padding: vertical-padding(medium) 0;
   }

@@ -145,7 +145,6 @@ if ($('#home-page').length){
             }
         }
 
-
         function eventHandler() {
             $('.spacer__img').each(function () {
                 const $spacerImg          = $(this);
