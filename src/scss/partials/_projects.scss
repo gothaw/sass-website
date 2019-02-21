@@ -1,0 +1,84 @@
+//============================================= Imports ==================================================
+@import '_utilities';
+/*========================================================================================================*/
+/*============================================= PROJECTS =================================================*/
+/*========================================================================================================*/
+
+/*============================================ FRONT-END =================================================*/
+.front-end{
+  &__heading{
+    @include section-heading;
+  }
+  &__carousel-wrapper{
+    position: relative;
+    overflow: hidden;
+  }
+  &__carousel{
+    position: relative;
+    top: 0;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    transition: left duration(medium);
+  }
+  &__arrow{
+    color: color(main);
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    user-select: none;
+    transform: translateY(-50%);
+    font-size: 1.9em;
+    padding: 15px;
+    transition: all duration(medium);
+    &--left{
+      left:0;
+      border-radius: 0 10px 10px 0;
+    }
+    &--right{
+      right: 33.33%;
+      border-radius: 10px 0 0 10px;
+      transform: translate(-100%,-50%);
+    }
+    &:hover{
+      background-color: color(font);
+    }
+  }
+  &__description{
+    @include section-text;
+    p:not(:last-child){
+      margin-bottom: 15px;
+    }
+    &--hide{
+      display: none;
+    }
+  }
+  .description__title{
+    @include small-subheading;
+    font-weight: bold;
+    margin: 15px 0;
+  }
+}
+/* ------------------- MOBILE SECTION ------------------- */
+@include mobile{
+  .front-end{
+    padding: vertical-padding(small) 0;
+    &__carousel{
+      left: 0;
+      width: 400%;
+    }
+  }
+}
+/* --------------- TABLET AND DESKTOP SECTION -------------- */
+@include tablet-and-desktop{
+  .front-end{
+    padding: vertical-padding(medium) 0;
+    &__carousel-wrapper{
+      clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+    }
+    &__carousel{
+      //grid-column-gap: 10px;
+      left: 0;
+      width: 250%;
+    }
+  }
+}
