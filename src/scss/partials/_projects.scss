@@ -20,27 +20,18 @@
     grid-template-columns: repeat(4,1fr);
     transition: left duration(medium);
   }
+  &__carousel-background{
+    position: relative;
+  }
   &__arrow{
-    color: color(main);
     position: absolute;
-    top: 50%;
     cursor: pointer;
     user-select: none;
-    transform: translateY(-50%);
-    font-size: 1.9em;
-    padding: 15px;
-    transition: all duration(medium);
-    &--left{
-      left:0;
-      border-radius: 0 10px 10px 0;
-    }
-    &--right{
-      right: 33.33%;
-      border-radius: 10px 0 0 10px;
-      transform: translate(-100%,-50%);
-    }
+    font-size: 2.0em;
+    padding: 0 10px 5px;
+    transition: all duration(fast);
     &:hover{
-      background-color: color(font);
+      background-color: color(main);
     }
   }
   &__description{
@@ -50,6 +41,10 @@
     }
     &--hide{
       display: none;
+    }
+    &--show{
+      animation-name: fade;
+      animation-duration: duration(v-fast);
     }
   }
   .description__title{
@@ -66,6 +61,23 @@
       left: 0;
       width: 400%;
     }
+    &__arrow{
+      border: solid 2px color(background);
+      bottom: 10px;
+      color: color(background);
+      &--left{
+        right:73px;
+      }
+      &--left-active:active{
+        right: 78px;
+      }
+      &--right{
+        right:10px;
+      }
+      &--right-active:active{
+        right: 5px;
+      }
+    }
   }
 }
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
@@ -73,12 +85,51 @@
   .front-end{
     padding: vertical-padding(medium) 0;
     &__carousel-wrapper{
-      clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+      clip-path: polygon(100% 0, 100% 35%, 75% 100%, 0 100%, 0 0);
     }
     &__carousel{
-      //grid-column-gap: 10px;
+      grid-column-gap: 20px;
       left: 0;
       width: 250%;
     }
+    &__arrow{
+      border: solid 2px color(font);
+      bottom: 0;
+      color: color(font);
+      &--left{
+        right:63px;
+      }
+      &--left-active:active{
+        right: 68px;
+      }
+      &--right{
+        right:0;
+      }
+      &--right-active:active{
+        right: -5px;
+      }
+    }
+  }
+}
+/*============================================ BACK-END =================================================*/
+.back-end{
+  background: color(background-light);
+  &__heading{
+    @include section-heading;
+  }
+
+}
+/* ------------------- MOBILE SECTION ------------------- */
+@include mobile{
+  .back-end{
+    padding: vertical-padding(small) 0;
+
+  }
+}
+/* --------------- TABLET AND DESKTOP SECTION -------------- */
+@include tablet-and-desktop{
+  .back-end{
+    padding: vertical-padding(medium) 0;
+
   }
 }

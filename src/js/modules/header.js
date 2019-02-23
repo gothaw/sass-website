@@ -12,7 +12,7 @@ import enquire from '../lib/enquire.js'
     const menuItems                 = document.querySelectorAll('.menu__item');
 
     let toggleMenuActive = false;
-    let typedText = ["Front-end.","Node.js.","JavaScript.","MySQL.","Python."];
+    let typedText = ['Front-end.','Node.js.','JavaScript.','MySQL.','Python.'];
 
 
     /**
@@ -23,10 +23,10 @@ import enquire from '../lib/enquire.js'
     function menuScroll(e) {
         let offset=0;
         e.preventDefault();
-        const menuItemHref = $(e.target).attr("href");
-        $("html, body").animate(
+        const menuItemHref = $(e.target).attr('href');
+        $('html, body').animate(
             {
-                "scrollTop" : $(menuItemHref).offset().top - offset
+                'scrollTop' : $(menuItemHref).offset().top - offset
             },
             1000
         );
@@ -37,9 +37,9 @@ import enquire from '../lib/enquire.js'
      */
     function homeScroll(e) {
         e.preventDefault();
-        $("html, body").animate(
+        $('html, body').animate(
             {
-                "scrollTop" : 0
+                'scrollTop' : 0
             },
             500
         );
@@ -77,7 +77,7 @@ import enquire from '../lib/enquire.js'
      */
     function textTypingInterval(index,typingDuration=800) {
         let j=0;
-        typingSpace.innerHTML="";
+        typingSpace.innerHTML='';
         const interval = setInterval(function () {
            if(j<typedText[index].length){
                typingSpace.innerHTML+=typedText[index].charAt(j);
@@ -95,10 +95,10 @@ import enquire from '../lib/enquire.js'
      *              Uses enquire.js module.
      */
     function registerMenu() {
-        enquire.register("screen and (max-width: 767px)", {
+        enquire.register('screen and (max-width: 767px)', {
             match: function () {
                 $(menuItems).hide();
-                $toggleMenuIconImg.attr("src","dist/img/icons/toggle-icon.png");
+                $toggleMenuIconImg.attr('src','dist/img/icons/toggle-icon.png');
                 toggleMenuActive=false;
             },
             unmatch: function () {
@@ -114,11 +114,11 @@ import enquire from '../lib/enquire.js'
     function toggleMenu() {
         $(menuItems).slideToggle();
         if(toggleMenuActive){
-            $toggleMenuIconImg.attr("src","dist/img/icons/toggle-icon.png");
+            $toggleMenuIconImg.attr('src','dist/img/icons/toggle-icon.png');
             toggleMenuActive=false;
         }
         else {
-            $toggleMenuIconImg.attr("src","dist/img/icons/toggle-icon-active.png");
+            $toggleMenuIconImg.attr('src','dist/img/icons/toggle-icon-active.png');
             toggleMenuActive=true;
         }
     }
@@ -141,5 +141,5 @@ import enquire from '../lib/enquire.js'
         typingAnimation();
     }
 
-    window.addEventListener("load", init);
+    window.addEventListener('load', init);
 })();

@@ -12,7 +12,7 @@ if ($('#home-page').length){
         const skills                = document.getElementById('skills');
         const skillBars             = document.querySelectorAll('.skill__bar');
         const clientCarousel        = document.querySelector('.portfolio__carousel');
-        const areaOfInterest        = document.querySelector(".contact__select");
+        const areaOfInterest        = document.querySelector('.contact__select');
 
         /**
          * @name        spacerImgParallax
@@ -26,7 +26,7 @@ if ($('#home-page').length){
         function spacerImgParallax(speed,$img,$wrapper) {
             let parallaxInterval;
             let imgPercent;
-            enquire.register("screen and (min-width: 1025px)", {
+            enquire.register('screen and (min-width: 1025px)', {
                 match: function () {
                     parallaxInterval = setInterval(function () {
                         const winTop        = $(this).scrollTop();
@@ -61,12 +61,12 @@ if ($('#home-page').length){
          *              Uses enquire.js.
          */
         function responsiveSpacerImg() {
-            enquire.register("screen and (min-width: 540px)", {
+            enquire.register('screen and (min-width: 540px)', {
                 match: function () {
-                    $spacerImg.addClass("img-responsive");
+                    $spacerImg.addClass('img-responsive');
                 },
                 unmatch: function () {
-                    $spacerImg.removeClass("img-responsive");
+                    $spacerImg.removeClass('img-responsive');
                 }
             });
         }
@@ -126,7 +126,7 @@ if ($('#home-page').length){
                 }
                 else{
                     i=0;
-                    clientCarousel.style.left = "0";
+                    clientCarousel.style.left = '0';
                 }
             },5000)
         }
@@ -138,10 +138,10 @@ if ($('#home-page').length){
          */
         function greyOutSelectPlaceholder(){
             if(areaOfInterest[0].selected){
-                areaOfInterest.classList.add("contact__select--grey");
+                areaOfInterest.classList.add('contact__select--grey');
             }
             else{
-                areaOfInterest.classList.remove("contact__select--grey");
+                areaOfInterest.classList.remove('contact__select--grey');
             }
         }
 
@@ -168,6 +168,6 @@ if ($('#home-page').length){
             greyOutSelectPlaceholder();
         }
 
-        window.addEventListener("load", init);
+        window.addEventListener('load', init);
     })();
 }

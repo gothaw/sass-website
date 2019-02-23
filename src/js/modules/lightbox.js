@@ -19,11 +19,11 @@
         function showProjectLightBox(e) {
             e.stopPropagation();
             const $targetButton         = $(e.target);
-            const $targetProject        = $targetButton.closest(".portfolio__project");
+            const $targetProject        = $targetButton.closest('.portfolio__project');
             const projectIndex          = $targetProject.index();
             $(projectDescriptions).hide();
             $(projectDescriptions[projectIndex]).show();
-            const mainImg               = $targetProject.find("PICTURE").clone();
+            const mainImg               = $targetProject.find('PICTURE').clone();
             if(lightboxImgWrapper.lastChild){
                 lightboxImgWrapper.removeChild(lightboxImgWrapper.lastChild);
             }
@@ -36,7 +36,7 @@
             $projectButton.on('click',function (e) {
                 showProjectLightBox(e);
             });
-            $lightboxClose.on("click",function (){
+            $lightboxClose.on('click',function (){
                 $lightbox.hide();
             });
         }
@@ -45,7 +45,7 @@
             eventHandler();
         }
 
-        window.addEventListener("load",init);
+        window.addEventListener('load',init);
     }
 })();
 
