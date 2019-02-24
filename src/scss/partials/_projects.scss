@@ -10,7 +10,6 @@
     @include section-heading;
   }
   &__carousel-wrapper{
-    position: relative;
     overflow: hidden;
   }
   &__carousel{
@@ -20,19 +19,11 @@
     grid-template-columns: repeat(4,1fr);
     transition: left duration(medium);
   }
-  &__carousel-background{
+  &__projects{
     position: relative;
   }
   &__arrow{
-    position: absolute;
-    cursor: pointer;
-    user-select: none;
-    font-size: 2.0em;
-    padding: 0 10px 5px;
-    transition: all duration(fast);
-    &:hover{
-      background-color: color(main);
-    }
+    @include gallery-arrow($border-color-desktop:color(font),$color-desktop:color(font));
   }
   &__description{
     @include section-text;
@@ -49,7 +40,6 @@
   }
   .description__title{
     @include small-subheading;
-    font-weight: bold;
     margin: 15px 0;
   }
 }
@@ -62,14 +52,12 @@
       width: 400%;
     }
     &__arrow{
-      border: solid 2px color(background);
       bottom: 10px;
-      color: color(background);
       &--left{
-        right:73px;
+        left: 10px;
       }
       &--left-active:active{
-        right: 78px;
+        left: 5px;
       }
       &--right{
         right:10px;
@@ -78,6 +66,7 @@
         right: 5px;
       }
     }
+
   }
 }
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
@@ -93,9 +82,7 @@
       width: 250%;
     }
     &__arrow{
-      border: solid 2px color(font);
       bottom: 0;
-      color: color(font);
       &--left{
         right:63px;
       }
@@ -117,18 +104,111 @@
   &__heading{
     @include section-heading;
   }
-
+  &__carousel-wrapper{
+    position: relative;
+    overflow: hidden;
+  }
+  &__carousel{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 400%;
+    display: flex;
+    justify-content: space-between;
+    transition: left duration(medium);
+  }
+  &__arrow{
+    @include gallery-arrow;
+    bottom: 10px;
+    &--left{
+      left: 10px;
+    }
+    &--left-active:active{
+      left: 5px;
+    }
+    &--right{
+      right:10px;
+    }
+    &--right-active:active{
+      right: 5px;
+    }
+  }
+  &__description{
+    @include section-text;
+    color: color(background);
+    p:not(:last-child){
+      margin-bottom: 15px;
+    }
+    &--hide{
+      display: none;
+    }
+    &--show{
+      animation-name: fade;
+      animation-duration: duration(v-fast);
+    }
+  }
+  .description__title{
+    @include small-subheading;
+    margin: 15px 0;
+  }
 }
 /* ------------------- MOBILE SECTION ------------------- */
 @include mobile{
   .back-end{
     padding: vertical-padding(small) 0;
-
   }
 }
 /* --------------- TABLET AND DESKTOP SECTION -------------- */
 @include tablet-and-desktop{
   .back-end{
+    padding: vertical-padding(medium) 0;
+    &__projects{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 20px;
+      align-items: center;
+    }
+  }
+}
+/*============================================ MOBILE =================================================*/
+.mobile{
+  &__heading{
+    @include section-heading;
+  }
+  &__description{
+    @include section-text;
+    p:not(:last-child){
+      margin-bottom: 15px;
+    }
+    &--hide{
+      display: none;
+    }
+    &--show{
+      animation-name: fade;
+      animation-duration: duration(v-fast);
+    }
+  }
+  &__accordion{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__img-wrapper{
+
+  }
+  .description__title{
+    @include small-subheading;
+    margin: 15px 0;
+  }
+}
+/* ------------------- MOBILE SECTION ------------------- */
+@include mobile{
+  .mobile{
+    padding: vertical-padding(small) 0;
+  }
+}
+/* --------------- TABLET AND DESKTOP SECTION -------------- */
+@include tablet-and-desktop{
+  .mobile{
     padding: vertical-padding(medium) 0;
 
   }
