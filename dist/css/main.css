@@ -904,8 +904,9 @@ a {
         font-size: 1.5em; } }
   .lightbox .lightbox__close {
     position: absolute;
-    top: 10px;
-    right: 20px;
+    top: 0;
+    right: 5px;
+    padding: 15px;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     cursor: pointer;
@@ -1276,25 +1277,6 @@ a {
     .mobile__heading {
       font-size: 2.7em; } }
 
-.mobile__description {
-  line-height: 1.1em; }
-  @media only screen and (max-width: 767px) {
-    .mobile__description {
-      font-size: 1em;
-      text-align: center; } }
-  @media only screen and (min-width: 768px) {
-    .mobile__description {
-      font-size: 1.2em; } }
-  .mobile__description p:not(:last-child) {
-    margin-bottom: 15px; }
-  .mobile__description--hide {
-    display: none; }
-  .mobile__description--show {
-    -webkit-animation-name: fade;
-            animation-name: fade;
-    -webkit-animation-duration: 0.2s;
-            animation-duration: 0.2s; }
-
 .mobile__accordion {
   display: flex;
   justify-content: space-between; }
@@ -1326,6 +1308,25 @@ a {
   width: auto;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%); }
+
+.mobile__description {
+  line-height: 1.1em; }
+  @media only screen and (max-width: 767px) {
+    .mobile__description {
+      font-size: 1em;
+      text-align: center; } }
+  @media only screen and (min-width: 768px) {
+    .mobile__description {
+      font-size: 1.2em; } }
+  .mobile__description p:not(:last-child) {
+    margin-bottom: 15px; }
+  .mobile__description--hide {
+    display: none; }
+  .mobile__description--show {
+    -webkit-animation-name: fade;
+            animation-name: fade;
+    -webkit-animation-duration: 0.2s;
+            animation-duration: 0.2s; }
 
 .mobile .description__title {
   color: #E31D3B;
@@ -1367,4 +1368,105 @@ a {
 @media only screen and (min-width: 1025px) {
   .mobile__accordion {
     height: 500px; } }
+
+/*============================================ DATABASE =================================================*/
+.database {
+  background-color: #dddddd; }
+  .database__heading {
+    color: #E31D3B;
+    font-family: 'Crete Round', serif;
+    padding-bottom: 20px; }
+    @media only screen and (max-width: 767px) {
+      .database__heading {
+        font-size: 1.9em;
+        text-align: center; } }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      .database__heading {
+        font-size: 2.2em; } }
+    @media only screen and (min-width: 1025px) {
+      .database__heading {
+        font-size: 2.7em; } }
+  .database__projects {
+    position: relative;
+    overflow: hidden; }
+  .database__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; }
+  .database__img-wrapper {
+    cursor: pointer; }
+  .database__description {
+    line-height: 1.1em;
+    background-color: black;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    overflow-y: scroll;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+    z-index: 10; }
+    @media only screen and (max-width: 767px) {
+      .database__description {
+        font-size: 1em;
+        text-align: center; } }
+    @media only screen and (min-width: 768px) {
+      .database__description {
+        font-size: 1.2em; } }
+    .database__description--shown {
+      top: 0; }
+    .database__description p:not(:last-child) {
+      margin-bottom: 15px; }
+    .database__description p:last-child {
+      margin-bottom: 20px; }
+  .database .description__title {
+    color: #E31D3B;
+    font-family: 'Crete Round', serif;
+    margin-bottom: 15px; }
+    @media only screen and (max-width: 767px) {
+      .database .description__title {
+        font-size: 1.2em; } }
+    @media only screen and (min-width: 768px) {
+      .database .description__title {
+        font-size: 1.5em; } }
+  .database .description__close {
+    position: absolute;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    padding: 15px; }
+    .database .description__close:hover {
+      color: #cccccc; }
+
+/* ------------------- MOBILE SECTION ------------------- */
+@media only screen and (max-width: 767px) {
+  .database {
+    padding: 20px 0; }
+    .database .description__inner {
+      margin-top: 25px; }
+    .database .description__close {
+      top: 0;
+      right: 0;
+      font-size: 1.9em; } }
+
+/* ------------ TABLET AND DESKTOP SECTION ------------ */
+@media only screen and (min-width: 768px) {
+  .database {
+    padding: 30px 0; }
+    .database .description__inner {
+      position: relative;
+      top: 50%;
+      left: 0;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); }
+    .database__grid {
+      grid-gap: 20px; }
+    .database .description__close {
+      top: 10px;
+      right: 10px;
+      font-size: 2.3em; } }
 

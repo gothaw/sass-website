@@ -3,7 +3,9 @@ import enquire from "../lib/enquire";
 if($('#projects-page').length){
     (function () {
         //jQuery variables
-        const $mobileAppProject             = $('.mobile__img-wrapper');
+        const $mobileAppProjects            = $('.mobile__img-wrapper');
+        const $databaseProjects             = $('.database__img-wrapper');
+        const $databaseCloseSymbol          = $('.description__close');
 
         //variables
         const frontEndCarousel              = document.querySelector('.front-end__carousel');
@@ -15,11 +17,10 @@ if($('#projects-page').length){
         const backEndArrowRight             = document.querySelector('.back-end__arrow--right');
         const backEndProjectDescriptions    = document.querySelectorAll('.back-end__description');
         const mobileAppProjectDescriptions  = document.querySelectorAll('.mobile__description');
-
+        const databaseProjectDescriptions   = document.querySelectorAll('.database__description');
 
         let frontEndProject                 =0;
         let backEndProject                  =0;
-
 
         /**
          * @name            galleryArrowsAnimation
@@ -61,11 +62,26 @@ if($('#projects-page').length){
         }
 
         /**
-         * @name             showDataBaseProject
-         * @desc
+         * @name            hideDatabaseProject
+         * @desc            Function hides the description by removing --shown css class.
+         * @param           e - target close symbol click event
          */
-        function showDataBaseProject() {
+        function hideDatabaseProject(e) {
+            const $targetDiv                = $(e.target);
+            const $targetDescription        = $targetDiv.parent();
+            $targetDescription.removeClass('database__description--shown');
+        }
 
+        /**
+         * @name             showDatabaseProject
+         * @desc             Function shows database project description by adding a css class.
+         * @param            e - target image click event
+         */
+        function showDatabaseProject(e) {
+            const $targetProject            = $(e.target);
+            const targetWrapper             = $targetProject.closest('.database__img-wrapper');
+            const targetWrapperIndex        = targetWrapper.index();
+            $(databaseProjectDescriptions[targetWrapperIndex]).addClass('database__description--shown');
         }
 
         /**
@@ -81,8 +97,8 @@ if($('#projects-page').length){
             const projectDescription        = mobileAppProjectDescriptions[targetWrapperIndex];
             $(targetWrapper).addClass('mobile__img-wrapper--selected');
             $(targetWrapper).removeClass('mobile__img-wrapper--unselected');
-            $mobileAppProject.not(targetWrapper).addClass('mobile__img-wrapper--unselected');
-            $mobileAppProject.not(targetWrapper).removeClass('mobile__img-wrapper--selected');
+            $mobileAppProjects.not(targetWrapper).addClass('mobile__img-wrapper--unselected');
+            $mobileAppProjects.not(targetWrapper).removeClass('mobile__img-wrapper--selected');
             showProjectDescription(mobileAppProjectDescriptions,projectDescription,'mobile');
         }
 
@@ -142,9 +158,15 @@ if($('#projects-page').length){
                     showBackEndProject();
                 }
             });
-            $mobileAppProject.on('click',function (e) {
+            $mobileAppProjects.on('click',function (e) {
                 showMobileAppProject(e);
-            })
+            });
+            $databaseProjects.on('click',function (e) {
+                showDatabaseProject(e);
+            });
+            $databaseCloseSymbol.on('click',function (e) {
+                hideDatabaseProject(e);
+            });
         }
 
         function init(){

@@ -363,8 +363,9 @@
   }
   .lightbox__close{
     position: absolute;
-    top: 10px;
-    right: 20px;
+    top: 0;
+    right: 5px;
+    padding: 15px;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     cursor: pointer;
