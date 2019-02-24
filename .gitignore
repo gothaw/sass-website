@@ -4,10 +4,6 @@
 # Idea folder
 .idea/
 
-# Img in dist
-
-dist/img/
-
 # node_modules
 
 node_modules/
