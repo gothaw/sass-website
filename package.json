@@ -20,7 +20,7 @@
   "homepage": "https://github.com/gothaw/sass-website#readme",
   "devDependencies": {
     "autoprefixer": "~9.4.6",
-    "axios": "~0.19.0",
+    "axios": "~0.21.1",
     "browser-sync": "~2.26.3",
     "css-loader": "~2.1.0",
     "fstream": "~1.0.12",
